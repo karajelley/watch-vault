@@ -1,8 +1,8 @@
-### Movie List App
+# Movie List App
 A React-based Single Page Application (SPA) for creating and managing personalized movie lists. Users can perform all CRUD (Create, Read, Update, Delete) operations, sort movies, and track their favorite movies across platforms.
 
 ## About the Project
-This project is a simple yet robust movie list management application. It allows users to add movies to personalized lists, mark them as watched or unwatched, rate them, and sort movies by different criteria. Built with React and Supabase, it is deployed online for universal access.
+This project is a simple yet robust movie list management application. It allows users to add movies to personalized lists, mark them as watched or unwatched, view ratings, and sort movies by different criteria. Built with React and Supabase, it is deployed online for universal access.
 
 ## Features
 - React.js Web App
@@ -31,7 +31,7 @@ This project is a simple yet robust movie list management application. It allows
 - View details on the Item Details Page.
 - Manage your movies list by marking them as watched/unwatched, ratings, genres (Conditional Rendering)
 
-# Backlog:
+### Backlog:
 - Carousel for lists
 - Search bar for finding movies quickly.
 - Toast notifications for user actions.

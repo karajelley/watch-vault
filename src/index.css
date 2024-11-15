@@ -1,0 +1,54 @@
+/* Body Font - Arimo */
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap');
+
+/* FONTS:
+
+Headings{
+      font-family: "Bebas Neue", sans-serif;
+
+Body{
+    font-family: "Arimo", sans-serif;
+*/
+
+/* 
+Colors:
+primary - #B035FF
+hover - #9C10FF
+active - #9000FF
+disabled - #F4E3FF
+background - #290D3C
+text - #F9EFFF
+ */
+
+ /* Responsive Design Breakpoints
+ MOBILE FIRST APPROACH
+tablets: width > 768px
+desktop: width > 1024px
+
+ */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arimo", sans-serif;
+}
+
+:root {
+    --primary-color: #B035FF;
+    --hover-color: #9C10FF;
+    --active-color: #9000FF;
+    --text-color: #290D3C;
+    --disabled-color: #F4E3FF;
+    --primary-font: 
+  }
+
+#root{
+    padding: 0 2rem;
+    height: 100dvh;
+}
+
+h1, h2{
+    font-family: "Bebas Neue", sans-serif;
+}
