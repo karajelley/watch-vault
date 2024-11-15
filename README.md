@@ -1,8 +1,40 @@
-# React + Vite
+### Movie List App
+A React-based Single Page Application (SPA) for creating and managing personalized movie lists. Users can perform all CRUD (Create, Read, Update, Delete) operations, sort movies, and track their favorite movies across platforms.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
+This project is a simple yet robust movie list management application. It allows users to add movies to personalized lists, mark them as watched or unwatched, rate them, and sort movies by different criteria. Built with React and Supabase, it is deployed online for universal access.
 
-Currently, two official plugins are available:
+## Features
+- React.js Web App
+- CRUD Operations: Add, view, edit, and delete movies from your lists.
+- Backend: Supabase (for API and database)
+- Deployment: Online (Netlify)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Main Components:
+- Home Page: Highlights top-rated and recently added movies using conditional rendering.
+- Movies Page: Displays all movies, auto-sorted by the most recent entries.
+- Create Item Page: Add new movies through a user-friendly form.
+- Edit Item Page: Edit existing movie entries.
+- Item Details Page: Detailed information about each movie.
+- About Page: Overview of the app and its features.
+- Error Page: Handles unexpected navigation errors.
+
+## Additional Functionalities:
+- Deleting movies from data base.
+- Sorting options for movie lists.
+- Integrated Favicon.
+
+## Usage
+- Navigate through pages via the NavBar.
+- Add new movies using the Create Item Page.
+- Edit existing movies through the Edit Item Page.
+- View details on the Item Details Page.
+- Manage your movies list by marking them as watched/unwatched, ratings, genres (Conditional Rendering)
+
+# Backlog:
+- Carousel for lists
+- Search bar for finding movies quickly.
+- Toast notifications for user actions.
+- Grouping and filtering mechanisms for better organization.
+- Error messages for invalid inputs or operations.
+- Personal star rating system for movies.
