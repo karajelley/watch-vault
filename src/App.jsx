@@ -19,7 +19,7 @@ function App() {
     try {
       let response = await supabase
       .from("moviesdb") //name of the table in superbase
-      .select("*") //we want to import all table entries
+      .select("*"); //we want to import all table entries
       setMoviesArray(response.data);  
     } catch {(error) => console.log("Error fetching data: ", error);
     }
