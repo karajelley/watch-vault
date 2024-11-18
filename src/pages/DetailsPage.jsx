@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function DetailsPage({moviesArray}){
+    
 
    // console.log("this is the array", moviesArray)
 
@@ -34,3 +35,6 @@ function DetailsPage({moviesArray}){
 }
 
 export default DetailsPage
+
+
+
