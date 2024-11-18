@@ -18,7 +18,7 @@ function App() {
   async function getMovies() {
     try {
       let response = await supabase
-      .from("movie_data_3") //name of the table in superbase
+      .from("moviesdb") //name of the table in superbase
       .select("*") //we want to import all table entries
       setMoviesArray(response.data);  
     } catch {(error) => console.log("Error fetching data: ", error);
@@ -33,7 +33,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/allmovies" element={<AllMoviesPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} getMovies={getMovies}/>}/>
         <Route path="/movie/:id" element={<DetailsPage/>}/>
-        <Route path="/newmovie" element={<NewMoviePage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
+        <Route path="/newmovie" element={<NewMoviePage getMovies={getMovies} />} />
         <Route path="/editmovie" element={<EditPage/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
