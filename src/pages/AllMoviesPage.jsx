@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import MovieCard from "../components/MovieCard";
+import { Link } from "react-router-dom";
 
 function AllMoviesPage({ moviesArray, getMovies }) {
   useEffect(() => {
@@ -10,7 +11,10 @@ function AllMoviesPage({ moviesArray, getMovies }) {
     <div>
       <h1>all movies page</h1>
       {moviesArray.map((movie) => {
-        return <MovieCard key={movie._id} movie={movie} />;
+        return (
+        <Link key={movie._id} to={`/movie/${movie._id}`}>
+          <MovieCard movie={movie}/>
+        </Link>)
       })}
     </div>
   );

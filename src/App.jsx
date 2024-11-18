@@ -24,6 +24,7 @@ function App() {
     } catch {(error) => console.log("Error fetching data: ", error);
     }
   }
+ // console.log("this is the array", moviesArray)
 
   return (
     <>
@@ -32,9 +33,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/allmovies" element={<AllMoviesPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} getMovies={getMovies}/>}/>
-        <Route path="/movie/:id" element={<DetailsPage/>} moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>
-        <Route path="/newmovie" element={<NewMoviePage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
-        <Route path="/editmovie" element={<EditPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>}/>
+        <Route path="/movie/:id" element={<DetailsPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
+        <Route path="/newmovie" element={<NewMoviePage/>} />
+        <Route path="/movie/:id/editmovie" element={<EditPage moviesArray={moviesArray}/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
