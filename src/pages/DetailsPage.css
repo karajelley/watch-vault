@@ -1,0 +1,37 @@
+
+
+.details-movie-section {
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.details-movie-header {
+
+
+}
+
+.quick-details {
+
+    h2 {
+        font-size: 48px;
+    
+    }
+}
+
+.left-side-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-side-content {
+    display: flex;
+    flex-direction: column;
+    img {
+        max-width: 300px;
+        max-height: 500px;
+        border-radius: 20px;
+    }
+}
+
