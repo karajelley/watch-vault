@@ -33,7 +33,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/allmovies" element={<AllMoviesPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} getMovies={getMovies}/>}/>
         <Route path="/movie/:id" element={<DetailsPage/>}/>
-        <Route path="/newmovie" element={<NewMoviePage />} />
+        <Route path="/newmovie" element={<NewMoviePage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
         <Route path="/editmovie" element={<EditPage/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
