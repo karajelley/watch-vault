@@ -35,7 +35,7 @@ function App() {
         <Route path="/allmovies" element={<AllMoviesPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} getMovies={getMovies}/>}/>
         <Route path="/movie/:id" element={<DetailsPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
         <Route path="/newmovie" element={<NewMoviePage/>} />
-        <Route path="/movie/:id/editmovie" element={<EditPage moviesArray={moviesArray}/>}/>
+        <Route path="/movie/:id/editmovie" element={<EditPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

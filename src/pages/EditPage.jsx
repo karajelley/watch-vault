@@ -15,17 +15,10 @@ const initialFormData = {
 
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function EditPage({ moviesArray, setMoviesArray = () => {} }) {
+function EditPage({ moviesArray, setMoviesArray }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData);
-
-  useEffect(() => {
-    const movieToEdit = moviesArray.find((movie) => movie._id === id);
-    if (movieToEdit) {
-      setFormData(movieToEdit); 
-    }
-  }, [id, moviesArray]);
 
   const handleOnChange = (e) => {
     const { type, value, name, checked } = e.target;
@@ -34,8 +27,8 @@ function EditPage({ moviesArray, setMoviesArray = () => {} }) {
       setFormData((prevFormData) => ({
         ...prevFormData,
         genre: checked
-          ? [...(prevFormData.genre || []), value] 
-          : (prevFormData.genre || []).filter((genre) => genre !== value), 
+          ? [...(prevFormData.genre || []), value]
+          : (prevFormData.genre || []).filter((genre) => genre !== value),
       }));
     } else {
       setFormData((prevFormData) => ({
@@ -51,28 +44,36 @@ function EditPage({ moviesArray, setMoviesArray = () => {} }) {
       .from("moviesdb")
       .update(formData)
       .eq("_id", id)
-      .select(); 
+      .select();
 
     if (error) {
       console.error("Error updating movie:", error);
-    } else if (data && data.length > 0) {  
+    } else if (data && data.length > 0) {
       setMoviesArray((prevMovies) =>
         prevMovies.map((movie) => (movie._id === id ? data[0] : movie))
       );
-      navigate(`/movie/${id}`); 
+      navigate(`/movie/${id}`);
     } else {
       console.error("No data returned from update operation.");
     }
   };
 
   if (!formData) return <div>Loading...</div>;
-
+  useEffect(() => {
+    const movieToEdit = moviesArray.find((movie) => movie._id === id);
+    if (movieToEdit) {
+      setFormData(movieToEdit);
+    }
+  }, [id, moviesArray]);
+  
   return (
     <section className="edit-movie-section">
       <div className="edit-movie-header">
         <button onClick={() => navigate(-1)}>Back</button>
         <h2>Edit Movie</h2>
-        <button type="submit" form="edit-form">Save</button>
+        <button type="submit" form="edit-form">
+          Save
+        </button>
       </div>
 
       <form id="edit-form" onSubmit={handleSubmit}>
