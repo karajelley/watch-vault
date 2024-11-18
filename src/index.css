@@ -39,15 +39,20 @@ desktop: width > 1024px
     --primary-color: #B035FF;
     --hover-color: #9C10FF;
     --active-color: #9000FF;
-    --text-color: #290D3C;
+    --text-color: #F9EFFF;
     --disabled-color: #F4E3FF;
-    --primary-font: 
+    --background-color: #290D3C;
+    --headings-font: "Bebas Neue", sans-serif;
+    --body-font: "Arimo", sans-serif;
   }
 
 #root{
-    padding: 0 2rem;
+    padding: 0 4rem;
     height: 100dvh;
+    background-color: var(--background-color);
+    height: 100%;
 }
+
 
 h1, h2{
     font-family: "Bebas Neue", sans-serif;
