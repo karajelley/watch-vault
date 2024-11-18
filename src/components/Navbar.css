@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* background: linear-gradient(180deg, var(--text-color) 84%, var(--primary-color) 98%); */
+/*     background: linear-gradient(180deg, var(--background-color) 84%, var(--primary-color) 98%); */
     
 
     .nav-links{

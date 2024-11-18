@@ -35,47 +35,49 @@ function DetailsPage({moviesArray}){
     return (
         <>
             <section className="details-movie-section">
+                <Link to="/allmovies">
+                    <button className="back-button">←</button>
+                </Link>
                 <div className="details-movie-header">
-                    <Link to="/allmovies">
-                        <button>back</button>
-                    </Link>
-                    <h2>{movie.title}</h2>
-
-                </div>
-                <div className="left-side-content">
-
-                    <div className="quick-details">
-                    <h4>{movie.watched ? '✅ Watched' : '🙈 Unwatched'}</h4>
-                    <h4>🎭 Genre: {formattedGenre}</h4>
-                    <h4>🍅 Rotton Tomatoes: {movie.rotten_tomatoes}%</h4>
-                    <h4>⭐️ Audience Rating: {movie.audience_rating*10}%</h4>
+                    <div className="left-header">
+                        <h2>{movie.title}</h2>
                     </div>
-
-                    <div className="lists">
-                        <h4>Lists: </h4>
-                    </div>
-
-                    <div className="description">
-                        <h4>Description:</h4>
-                        <p>{movie.description}</p>
-                    </div>
-
-                    <div className="right-side-content">
-                        <Link to={`/movie/${id}/editmovie`}>
-                        <button
-                            onClick={() => {
-                                deleteItem(movie._id);
-                            }}
-                        >
-                            <img src={deleteIcon} alt="delete icon" />
-                        </button>
-                            <button>Edit</button>
+                    <div>
+                        <Link className="right-header" to={`/movie/${id}/editmovie`}>
+                            <button className="delete-button"
+                                onClick={() => {
+                                    deleteItem(movie._id);
+                                }}
+                            >Delete</button>
+                            <button className="edit-button">Edit</button>
                         </Link>
+                    </div>
+                </div>
+                <div className="details-movie-body">
+                    <div className="left-side-content">
 
+                        <div className="quick-details">
+                        <h4>{movie.watched ? '✅ Watched' : '🙈 Unwatched'}</h4>
+                        <h4>🎭 Genre: {formattedGenre}</h4>
+                        <h4>🍅 Rotton Tomatoes: {movie.rotten_tomatoes}%</h4>
+                        <h4>⭐️ Audience Rating: {movie.audience_rating*10}%</h4>
+                        </div>
+
+                        <div className="lists">
+                            <h4>Lists: </h4>
+                        </div>
+
+                        <div className="description">
+                            <h4>Description:</h4>
+                            <p>{movie.description}</p>
+                        </div>
+
+                                                
+                    </div>
+                    <div className="right-side-content">
                         <img src={movie.image} alt={movie.title} />
                     </div>
-                    
-            </div>
+                </div>                
             </section>
         </>
     )
