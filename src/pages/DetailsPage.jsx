@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { useParams, useNavigate, Link } from "react-router-dom";
 import supabase from "../supabase/config";
-import { useNavigate } from "react-router-dom";
-import deleteIcon from "../assets/delete.svg";
+import DeletePopup from "../components/DeletePopup";
 import "./DetailsPage.css"
 
 function DetailsPage({moviesArray}){
@@ -18,15 +17,24 @@ function DetailsPage({moviesArray}){
     console.log(movie)
 
     const navigate = useNavigate();
+
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+    const showPopup = () => setIsPopupVisible(true);
+    const hidePopup = () => setIsPopupVisible(false);
+
     async function deleteItem(id) {
-    try {
-      const resp = await supabase.from("moviesdb").delete().eq("_id", id);
-      console.log(resp);
-      navigate("/allmovies");
-    } catch {
-      console.log("There's been an error deleting an item:");
+        try {
+          const resp = await supabase.from("moviesdb").delete().eq("_id", id);
+          console.log(resp);
+          alert("Item deleted!");
+          hidePopup();
+          navigate("/allmovies");
+        } catch {
+          console.log("There's been an error deleting an item:");
+        }
+
     }
-  }
 
     //format the genre array
     const formattedGenre = movie.genre && movie.genre.length > 0 
@@ -35,21 +43,22 @@ function DetailsPage({moviesArray}){
 
     return (
         <>
+           {isPopupVisible && (
+            <DeletePopup deleteItem={deleteItem} movie={movie} hidePopup={hidePopup}/>
+            )}
             <section className="details-movie-section">
-                <Link to="/allmovies">
+                <Link className="back-button-link" to="/allmovies">
                     <button className="back-button">←</button>
                 </Link>
                 <div className="details-movie-header">
                     <div className="left-header">
                         <h2>{movie.title}</h2>
                     </div>
-                    <div>
-                        <Link className="right-header" to={`/movie/${id}/editmovie`}>
-                            <button className="delete-button"
-                                onClick={() => {
-                                    deleteItem(movie._id);
-                                }}
-                            >Delete</button>
+                    <div className="right-header">
+                        <button className="delete-button"
+                            onClick={showPopup}
+                        >Delete</button>
+                        <Link to={`/movie/${id}/editmovie`}>
                             <button className="edit-button">Edit</button>
                         </Link>
                     </div>
@@ -62,10 +71,6 @@ function DetailsPage({moviesArray}){
                         <h4>🎭 Genre: {formattedGenre}</h4>
                         <h4>🍅 Rotton Tomatoes: {movie.rotten_tomatoes}%</h4>
                         <h4>⭐️ Audience Rating: {movie.audience_rating*10}%</h4>
-                        </div>
-
-                        <div className="lists">
-                            <h4>Lists: </h4>
                         </div>
 
                         <div className="description">
