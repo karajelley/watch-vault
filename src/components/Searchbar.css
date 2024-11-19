@@ -1,44 +1,55 @@
+/* Center the search bar on the page */
 .search-bar-container {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+    width: 50%; /* Medium portion of the page */
   }
   
+  /* Style the search bar input */
   .search-bar-input {
-    width: 10%;
-    padding: 8px;
+    width: 100%; /* Take full width of the container */
+    padding: 10px 15px;
     font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
+  /* Add focus styling for better accessibility */
+  .search-bar-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Style the suggestions dropdown */
   .search-bar-suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
     list-style: none;
+    margin: 5px 0 0;
     padding: 0;
-    margin: 0;
+    width: 100%; /* Same width as the input */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%; /* Positioned directly below the input */
+    left: 0;
     z-index: 10;
   }
+
   
-  .search-bar-suggestion-item {
-    padding: 8px;
+  
+  .search-bar-suggestions li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
     cursor: pointer;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .search-bar-suggestion-item:last-child {
-    border-bottom: none;
-  }
-  
-  .search-bar-suggestion-item:hover {
-    background-color: #f0f0f0;
-  }
-  
+}
+
+.search-bar-suggestions li:hover {
+    background-color: #f0f0f0; /* Optional: Highlight on hover */
+}

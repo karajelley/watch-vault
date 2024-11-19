@@ -4,16 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 
 function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
-  const navigate = useNavigate(); // For navigation
-  const [filteredMovies, setFilteredMovies] = useState(moviesArray); // Initialize with moviesArray
+  const navigate = useNavigate(); 
+  const [filteredMovies, setFilteredMovies] = useState(moviesArray); 
 
   const handleMovieSelect = (movie) => {
-    navigate(`/movie/${movie._id}`); // Navigate to the selected movie's page
+    navigate(`/movie/${movie._id}`); 
   };
 
   const handleSearchInput = (searchText) => {
     if (!searchText.trim()) {
-      setFilteredMovies(moviesArray); // Reset to all movies when search is cleared
+      setFilteredMovies(moviesArray); 
     } else {
       const filtered = moviesArray.filter((movie) =>
         movie.title.toLowerCase().includes(searchText.toLowerCase())
@@ -35,14 +35,14 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
   };
 
   useEffect(() => {
-    // Fetch movies only on component mount
+   
     if (moviesArray.length === 0) {
       getMovies();
     }
   }, [getMovies, moviesArray]);
 
   useEffect(() => {
-    // Synchronize filteredMovies with moviesArray whenever it changes
+    
     setFilteredMovies(moviesArray);
   }, [moviesArray]);
 
