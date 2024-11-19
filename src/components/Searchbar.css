@@ -1,4 +1,3 @@
-/* Center the search bar on the page */
 .search-bar-container {
     display: flex;
     flex-direction: column;
@@ -6,12 +5,12 @@
     justify-content: center;
     margin: 20px auto;
     position: relative;
-    width: 50%; /* Medium portion of the page */
+    width: 50%; 
   }
   
-  /* Style the search bar input */
+  
   .search-bar-input {
-    width: 100%; /* Take full width of the container */
+    width: 100%; 
     padding: 10px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -19,25 +18,25 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  /* Add focus styling for better accessibility */
+  
   .search-bar-input:focus {
     outline: none;
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   
-  /* Style the suggestions dropdown */
+  
   .search-bar-suggestions {
     list-style: none;
     margin: 5px 0 0;
     padding: 0;
-    width: 100%; /* Same width as the input */
+    width: 100%; 
     background: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 100%; /* Positioned directly below the input */
+    top: 100%; 
     left: 0;
     z-index: 10;
   }
@@ -51,5 +50,5 @@
 }
 
 .search-bar-suggestions li:hover {
-    background-color: #f0f0f0; /* Optional: Highlight on hover */
+    background-color: #f0f0f0; 
 }

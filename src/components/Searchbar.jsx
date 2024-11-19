@@ -5,7 +5,7 @@ import "./SearchBar.css";
 function SearchBar({ moviesArray, onSearch }) {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const query = e.target.value;
@@ -14,7 +14,7 @@ function SearchBar({ moviesArray, onSearch }) {
     onSearch(query);
 
     if (query.trim() === "") {
-      setSuggestions([]); 
+      setSuggestions([]);
       return;
     }
 
@@ -22,11 +22,11 @@ function SearchBar({ moviesArray, onSearch }) {
       movie.title.toLowerCase().includes(query.toLowerCase())
     );
 
-    setSuggestions(filteredMovies.slice(0, 5)); 
+    setSuggestions(filteredMovies.slice(0, 5));
   };
 
   const handleSuggestionClick = (movie) => {
-    navigate(`/movie/${movie._id}`); 
+    navigate(`/movie/${movie._id}`);
   };
 
   return (
