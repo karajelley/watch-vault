@@ -48,6 +48,7 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
     <div>
       <h1>all movies page</h1>
       <SearchBar moviesArray={moviesArray} onSearch={handleSearchInput} />
+      <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
       <button onClick={sortByTomatoes}>SORT BY 🍅</button>
       <button onClick={sortByTitle}>SORT ALPH</button>
       {filteredMovies.map((movie) => (

@@ -4,7 +4,7 @@ import supabase from "../supabase/config";
 import DeletePopup from "../components/DeletePopup";
 import "./DetailsPage.css"
 
-function DetailsPage({moviesArray}){
+function DetailsPage({moviesArray, setMoviesArray}){
     
 
    // console.log("this is the array", moviesArray)
@@ -24,17 +24,24 @@ function DetailsPage({moviesArray}){
     const hidePopup = () => setIsPopupVisible(false);
 
     async function deleteItem(id) {
-        try {
-          const resp = await supabase.from("moviesdb").delete().eq("_id", id);
-          console.log(resp);
-          alert("Item deleted!");
-          hidePopup();
-          navigate("/allmovies");
-        } catch {
-          console.log("There's been an error deleting an item:");
+      try {
+        const resp = await supabase.from("moviesdb").delete().eq("_id", id);
+        if (resp.error) {
+          throw resp.error;
         }
-
+        console.log("Item deleted:", resp);
+    
+        // Update the moviesArray state by removing the deleted movie
+        setMoviesArray((prevMovies) => prevMovies.filter((movie) => movie._id !== id));
+    
+        alert("Item deleted!");
+        hidePopup();
+        navigate("/allmovies");
+      } catch (err) {
+        console.error("There's been an error deleting an item:", err);
+      }
     }
+    
 
   //format the genre array
   const formattedGenre =
