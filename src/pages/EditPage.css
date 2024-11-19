@@ -1,0 +1,96 @@
+
+.edit-movie-section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    gap: 2rem;
+}
+
+.edit-movie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        font-size: 48px;
+    
+    }
+
+}
+
+.edit-movie-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-left-side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 50%;
+    gap: 2rem;
+
+}
+
+.edit-right-side-content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    border-radius: 1.5rem;
+    width: 50%;
+    img {
+        border-radius: 1rem;
+        max-height: 90%;
+        max-width: 90%;
+    }
+
+}
+
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(249, 239, 255, 0.2);
+    color: var(--text-color);
+  }
+
+  input:focus, textarea:focus {
+    border: solid 0.25rem var(--primary-color);
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  input[type="checkbox"] {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+  .input-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around
+  }
+
+  .input-group-label {
+    margin-top: .5rem; 
+    width: 100%;
+
+  }
+
+  .genre-checkboxes {
+    display: flex;
+    gap: .5rem;
+  }
+
+
+
+
