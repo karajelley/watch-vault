@@ -65,7 +65,7 @@ function EditPage({ moviesArray, setMoviesArray }) {
       setFormData(movieToEdit);
     }
   }, [id, moviesArray]);
-  
+
   return (
     <section className="edit-movie-section">
       <div className="edit-movie-header">
