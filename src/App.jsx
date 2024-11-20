@@ -11,6 +11,9 @@ import NewMoviePage from "./pages/NewMoviePage.jsx";
 import EditPage from "./pages/EditPage.jsx";
 import DetailsPage from "./pages/DetailsPage.jsx";
 import AllMoviesPage from "./pages/AllMoviesPage.jsx";
+import { Flip, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [moviesArray, setMoviesArray] = useState([])
@@ -36,6 +39,20 @@ function App() {
   return (
     <>
       <Navbar />
+      <ToastContainer
+position="top-right"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+transition={Flip}
+/>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

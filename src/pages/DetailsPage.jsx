@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import supabase from "../supabase/config";
 import DeletePopup from "../components/DeletePopup.jsx";
+import { notify } from '../utils/toastUtils.js';
 import "./DetailsPage.css"
 
 function DetailsPage({moviesArray, setMoviesArray}){
@@ -33,9 +34,10 @@ function DetailsPage({moviesArray, setMoviesArray}){
     
         // Update the moviesArray state by removing the deleted movie
         setMoviesArray((prevMovies) => prevMovies.filter((movie) => movie._id !== id));
-    
+        
         alert("Item deleted!");
         hidePopup();
+        notify("Movie deleted successfully!", { type: "success" });
         navigate("/allmovies");
       } catch (err) {
         console.error("There's been an error deleting an item:", err);

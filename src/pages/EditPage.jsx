@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
 import "./EditPage.css"
 
@@ -50,6 +51,7 @@ function EditPage({ moviesArray, setMoviesArray, changesDiscarded, getMovies }) 
     if (error) {
       console.error("Error updating movie:", error);
     } else if (data && data.length > 0) {
+      notify("Movie updated successfully!", { type: "success" });
       await getMovies ()
       navigate(`/movie/${id}`);
     } else {

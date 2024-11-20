@@ -1,5 +1,6 @@
 import {useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
 import "./NewMoviePage.css"
 
@@ -54,6 +55,7 @@ function NewMoviePage({changesDiscarded, getMovies}) {
       .catch((error) => {
         console.log(error);
       });
+      notify("Movie created successfully!", { type: "success" });
 
       await getMovies();
       
