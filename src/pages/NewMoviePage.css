@@ -1,4 +1,3 @@
-
 .new-movie-section {
     display: flex;
     flex-direction: column;
@@ -11,9 +10,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     h2 {
         font-size: 48px;
-    
+
     }
 
 }
@@ -39,6 +39,7 @@
     justify-content: start;
     border-radius: 1.5rem;
     width: 50%;
+
     img {
         border-radius: 1rem;
         max-height: 90%;

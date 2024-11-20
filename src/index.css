@@ -21,14 +21,14 @@ background - #290D3C
 text - #F9EFFF
  */
 
- /* Responsive Design Breakpoints
+/* Responsive Design Breakpoints
  MOBILE FIRST APPROACH
 tablets: width > 768px
 desktop: width > 1024px
 
  */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -44,9 +44,9 @@ desktop: width > 1024px
     --background-color: #190725;
     --headings-font: "Bebas Neue", sans-serif;
     --body-font: "Arimo", sans-serif;
-  }
+}
 
-#root{
+#root {
     padding: 0 4rem;
     height: 100dvh;
     background-color: var(--background-color);
@@ -54,6 +54,7 @@ desktop: width > 1024px
 }
 
 
-h1, h2{
+h1,
+h2 {
     font-family: "Bebas Neue", sans-serif;
 }

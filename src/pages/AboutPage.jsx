@@ -16,7 +16,11 @@ function AboutPage() {
       </p>
       <div className="team-section">
         <div className="team-card">
-          <img className="member-img" src="src/assets/Headshot Round.png" alt="Kara" />
+          <img
+            className="member-img"
+            src="src/assets/Headshot Round.png"
+            alt="Kara"
+          />
           <h2>Kara Jelley</h2>
           <p>
             Hi, I'm Kara, a UX/UI designer with a strong interest in full-stack
