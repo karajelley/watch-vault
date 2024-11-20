@@ -70,7 +70,7 @@ function DetailsPage({moviesArray, setMoviesArray}){
               Delete
             </button>
             <Link to={`/movie/${id}/editmovie`}>
-              <button className="edit-button">Edit</button>
+              <button className="primary-button">Edit</button>
             </Link>
           </div>
         </div>

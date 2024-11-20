@@ -80,7 +80,7 @@ function EditPage({ moviesArray, setMoviesArray, changesDiscarded, getMovies }) 
           <button className="cancel-button" onClick={changesDiscarded}>
             Cancel
           </button>
-          <button className="edit-button" type="submit" form="edit-form">
+          <button className="primary-button" type="submit" form="edit-form">
             Save
           </button>
         </div>

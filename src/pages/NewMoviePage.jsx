@@ -75,7 +75,7 @@ function NewMoviePage({changesDiscarded, getMovies}) {
           <button className="cancel-button" onClick={changesDiscarded}>
             Cancel
           </button>
-          <button className="edit-button" type="submit" form="create-form">
+          <button className="primary-button" type="submit" form="create-form">
             Save
           </button>
         </div>
