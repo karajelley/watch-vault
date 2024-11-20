@@ -1,85 +1,85 @@
 .about-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
-  h1 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 5rem;
+    }
+  
+    p {
+      text-align: center;
+      font-size: 22px;
+      width: 80%;
+      margin: 0 auto;
+    }
+  
   }
-
-  p {
+  
+  .team-section {
+    display: flex;
+    margin-top: 30px;
+    gap: 50px;
+    width: 600px;
+    justify-content: center;
+  }
+  
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 227, 255, 0.05);
+    color: var(--text-color);
+    border-radius: 20px;
+    gap: 20px;
+    padding: 40px 30px;
     text-align: center;
-    font-size: 22px;
-    width: 80%;
+    font-family: var(--body-font);
     margin: 0 auto;
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+  
+    p {
+      width: 280px;
+    };
+  
   }
-
-}
-
-.team-section {
-  display: flex;
-  margin-top: 30px;
-  gap: 50px;
-  width: 600px;
-  justify-content: center;
-}
-
-.team-card {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(244, 227, 255, 0.05);
-  color: var(--text-color);
-  border-radius: 20px;
-  gap: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  font-family: var(--body-font);
-  margin: 0 auto;
-  h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 2rem;
-    color: var(--primary-color);
+  
+  .member-img {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    border-radius: 100px;
   }
-
-  p {
-    width: 280px;
-  };
-
-}
-
-.member-img {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto;
-  border-radius: 100px;
-}
-
-.button-div {
-  display: flex;
-  margin: 0 auto;
-  margin-top: auto;
-  gap: 20px;
-
-}
-
-
-.about-buttons {
-  background-color: transparent;
-  border: none;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  img {
-    width: 100px;
-    height: 100%;
-    object-fit: contain;
+  
+  .button-div {
+    display: flex;
+    margin: 0 auto;
+    margin-top: auto;
+    gap: 20px;
+  
   }
-
-}
+  
+  
+  .about-buttons {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    img {
+      width: 100px;
+      height: 100%;
+      object-fit: contain;
+    }
+  
+  }

@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css"
 
 function Navbar() {
   return (
     <header className="header">
-      <h1>🎥 DKD Movies</h1> {/*logo here*/}
-      <nav className="nav-links">
-        <Link to={"/"}>home</Link>
-        <Link to={"/allmovies"}>all movies</Link>
-        <Link to={"/about"}>about</Link>
+      <nav className="nav-container">
+      <Link to={"/"}>
+        <img src="src/assets/logo-horizontal.png" alt="WatchValut Logo" width="30%" />
+      </Link>
+      <div className="nav-links">
+        <NavLink className="nav-link" to={"/"}>Movies</NavLink>
+        <NavLink className="nav-link" to={"/allmovies"}>all movies</NavLink>
+        <NavLink className="nav-link" to={"/about"}>About Us</NavLink>
+      </div>
       </nav>
     </header>
   );

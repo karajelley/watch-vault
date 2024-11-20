@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
+import "./FormStyling.css"
 
 const initialFormData = {
   title: "",
@@ -16,8 +18,10 @@ const initialFormData = {
 // THIS MIGHT GO TO USECONTEXT()!!!!
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function NewMoviePage({ changesDiscarded, setMoviesArray }) {
+function NewMoviePage({changesDiscarded, getMovies}) {
   const [formData, setFormData] = useState(initialFormData);
+  const navigate = useNavigate()
+  
 
   function handleOnChange(e) {
     const { type, value, id, checked, name } = e.target;
@@ -38,9 +42,8 @@ function NewMoviePage({ changesDiscarded, setMoviesArray }) {
     }
   }
 
-  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
     supabase
@@ -52,8 +55,11 @@ function NewMoviePage({ changesDiscarded, setMoviesArray }) {
       .catch((error) => {
         console.log(error);
       });
-    setMoviesArray((prevMoviesArray) => [...prevMoviesArray, formData]);
-    navigate(`/allmovies`);
+      notify("Movie created successfully!", { type: "success" });
+
+      await getMovies();
+      
+      navigate(`/allmovies`);
   }
 
   return (
@@ -150,15 +156,16 @@ function NewMoviePage({ changesDiscarded, setMoviesArray }) {
                 );
               })}
             </div>
-
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              id="description"
-              value={formData.description}
-              onChange={handleOnChange}
-              required
-            />
+   
+              <label htmlFor="description">Description:</label>
+              <textarea
+                type="text"
+                id="description"
+                value={formData.description}
+                onChange={handleOnChange}
+                rows="8"
+                cols="50" 
+              />
 
             <label htmlFor="image">Image:</label>
             <input

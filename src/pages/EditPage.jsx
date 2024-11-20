@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
-import "./EditPage.css";
+import "./FormStyling.css"
 
 const initialFormData = {
   title: "",
@@ -16,7 +17,7 @@ const initialFormData = {
 
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function EditPage({ moviesArray, setMoviesArray, changesDiscarded }) {
+function EditPage({ moviesArray, setMoviesArray, changesDiscarded, getMovies }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData);
@@ -50,11 +51,8 @@ function EditPage({ moviesArray, setMoviesArray, changesDiscarded }) {
     if (error) {
       console.error("Error updating movie:", error);
     } else if (data && data.length > 0) {
-      {
-        /*setMoviesArray((prevMovies) =>
-        prevMovies.map((movie) => (movie._id === id ? data[0] : movie))
-      );*/
-      }
+      notify("Movie updated successfully!", { type: "success" });
+      await getMovies ()
       navigate(`/movie/${id}`);
     } else {
       console.error("No data returned from update operation.");

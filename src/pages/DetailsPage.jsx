@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import supabase from "../supabase/config";
 import DeletePopup from "../components/DeletePopup.jsx";
-import "./DetailsPage.css";
+import { notify } from '../utils/toastUtils.js';
+import "./DetailsPage.css"
 
-function DetailsPage({ moviesArray, setMoviesArray }) {
-  // console.log("this is the array", moviesArray)
+function DetailsPage({moviesArray, setMoviesArray}){
+    
+
+   // console.log("this is the array", moviesArray)
 
   const { id } = useParams();
   // console.log("this is the params id:" , id)
@@ -20,26 +23,26 @@ function DetailsPage({ moviesArray, setMoviesArray }) {
   const showPopup = () => setIsPopupVisible(true);
   const hidePopup = () => setIsPopupVisible(false);
 
-  async function deleteItem(id) {
-    try {
-      const resp = await supabase.from("moviesdb").delete().eq("_id", id);
-      if (resp.error) {
-        throw resp.error;
+    async function deleteItem(id) {
+      try {
+        const resp = await supabase.from("moviesdb").delete().eq("_id", id);
+        if (resp.error) {
+          throw resp.error;
+        }
+        console.log("Item deleted:", resp);
+    
+        // Update the moviesArray state by removing the deleted movie
+        setMoviesArray((prevMovies) => prevMovies.filter((movie) => movie._id !== id));
+        
+        alert("Item deleted!");
+        hidePopup();
+        notify("Movie deleted successfully!", { type: "success" });
+        navigate("/allmovies");
+      } catch (err) {
+        console.error("There's been an error deleting an item:", err);
       }
-      console.log("Item deleted:", resp);
-
-      // Update the moviesArray state by removing the deleted movie
-      setMoviesArray((prevMovies) =>
-        prevMovies.filter((movie) => movie._id !== id)
-      );
-
-      alert("Item deleted!");
-      hidePopup();
-      navigate("/allmovies");
-    } catch (err) {
-      console.error("There's been an error deleting an item:", err);
     }
-  }
+    
 
   //format the genre array
   const formattedGenre =
