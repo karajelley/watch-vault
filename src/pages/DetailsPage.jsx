@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, useNavigate, Link } from "react-router-dom";
 import supabase from "../supabase/config";
-import DeletePopup from "../components/DeletePopup";
+import DeletePopup from "../components/DeletePopup.jsx";
 import "./DetailsPage.css"
 
 function DetailsPage({moviesArray, setMoviesArray}){

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/Searchbar.jsx";
 
 function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
   const navigate = useNavigate();

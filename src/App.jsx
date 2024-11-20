@@ -2,15 +2,15 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import supabase from "./supabase/config";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ErrorPage from "./pages/ErrorPage";
-import NewMoviePage from "./pages/NewMoviePage";
-import EditPage from "./pages/EditPage";
-import DetailsPage from "./pages/DetailsPage";
-import AllMoviesPage from "./pages/AllMoviesPage";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import NewMoviePage from "./pages/NewMoviePage.jsx";
+import EditPage from "./pages/EditPage.jsx";
+import DetailsPage from "./pages/DetailsPage.jsx";
+import AllMoviesPage from "./pages/AllMoviesPage.jsx";
 
 function App() {
   const [moviesArray, setMoviesArray] = useState([])
