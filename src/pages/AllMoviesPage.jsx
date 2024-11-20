@@ -41,6 +41,16 @@ function AllMoviesPage({ moviesArray, getMovies }) {
     setFilteredMovies(arrayCopy);
   };
 
+  const slideLeft =() =>{
+    let slider = document.querySelector(".movie-cards-container")
+    slider.scrollLeft =  slider.scrollLeft - 400;
+  };
+
+  const slideRight =() =>{
+    let slider = document.querySelector(".movie-cards-container")
+    slider.scrollLeft =  slider.scrollLeft + 400;
+  };
+
   useEffect(() => {
     if (moviesArray.length === 0) {
       getMovies();
@@ -53,7 +63,6 @@ function AllMoviesPage({ moviesArray, getMovies }) {
 
   return (
     <section className="all-movies-section">
-      <h1>all movies page</h1>
       <Searchbar moviesArray={moviesArray} onSearch={handleSearchInput} />
       <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
       <button onClick={sortByTomatoes}>SORT BY 🍅</button>
@@ -90,31 +99,33 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         />
         <label htmlFor="unwatched">Unwatched</label>
       </fieldset>
-      <div className="movie-cards-container">
-        <button className="scroll-btn left">
+      <section className="scroll-container">
+        <button className="scroll-btn left" onClick={slideLeft}>
           <img src={leftButton} alt="left scroll button" />
         </button>
-        {watched === null // by default will we this, since "all" is watched === null
-          ? filteredMovies.map((movie) => (
-              <Link key={movie._id} to={`/movie/${movie._id}`}>
-                <MovieCard movie={movie} />
-              </Link>
-            ))
-          : filteredMovies //if watched is not null:
-              .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
-              .map(
-                (
-                  movie //then, render the filtered list
-                ) => (
-                  <Link key={movie._id} to={`/movie/${movie._id}`}>
-                    <MovieCard movie={movie} />
-                  </Link>
-                )
-              )}
-        <button className="scroll-btn right">
+        <div className="movie-cards-container">
+          {watched === null // by default will we this, since "all" is watched === null
+            ? filteredMovies.map((movie) => (
+                <Link key={movie._id} to={`/movie/${movie._id}`}>
+                  <MovieCard movie={movie} />
+                </Link>
+              ))
+            : filteredMovies //if watched is not null:
+                .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
+                .map(
+                  (
+                    movie //then, render the filtered list
+                  ) => (
+                    <Link key={movie._id} to={`/movie/${movie._id}`}>
+                      <MovieCard movie={movie} />
+                    </Link>
+                  )
+                )}
+        </div>
+        <button className="scroll-btn right" onClick={slideRight}>
           <img src={rightButton} alt="right scroll button" />
         </button>
-      </div>
+      </section>
     </section>
   );
 }

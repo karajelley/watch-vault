@@ -55,10 +55,14 @@ desktop: width > 1024px
 
 
 h1,
-h2 {
+h2, h3 {
     font-family: "Bebas Neue", sans-serif;
 }
 
+p, a, input, label{
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
 a{
     text-decoration: none;
 }
