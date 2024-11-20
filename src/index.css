@@ -49,7 +49,7 @@ desktop: width > 1024px
 #root{
     padding: 0 4rem;
     height: 100dvh;
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     height: 100%;
 }
 

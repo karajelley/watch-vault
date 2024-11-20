@@ -1,5 +1,6 @@
 import { useState } from "react";
 import supabase from "../supabase/config";
+import { Link } from "react-router-dom";
 
 const initialFormData = {
   title: "",
@@ -54,7 +55,7 @@ function NewMoviePage() {
   return (
     <section className="new-movie-section">
       <div className="new-movie-header">
-        <button>back</button>
+        <Link to={"/allmovies"}>back</Link>
         <h2>Add Movie</h2>
         <button type="submit" form="create-form">
           save

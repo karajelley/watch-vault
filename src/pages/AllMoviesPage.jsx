@@ -6,10 +6,11 @@ import SearchBar from "../components/Searchbar.jsx";
 function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
   const navigate = useNavigate();
   const [filteredMovies, setFilteredMovies] = useState(moviesArray);
+  const [watched, setWatched] = useState(null);
 
-  const handleMovieSelect = (movie) => {
-    navigate(`/movie/${movie._id}`);
-  };
+  // const handleMovieSelect = (movie) => {
+  //   navigate(`/movie/${movie._id}`);
+  // };
 
   const handleSearchInput = (searchText) => {
     if (!searchText.trim()) {
@@ -34,6 +35,11 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
     setFilteredMovies(arrayCopy);
   };
 
+  // const handleWatched = () => {
+  //   setWatched(!watched);
+  //   console.log(watched);
+  // };
+
   useEffect(() => {
     if (moviesArray.length === 0) {
       getMovies();
@@ -51,11 +57,28 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
       <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
       <button onClick={sortByTomatoes}>SORT BY 🍅</button>
       <button onClick={sortByTitle}>SORT ALPH</button>
-      {filteredMovies.map((movie) => (
-        <Link key={movie._id} to={`/movie/${movie._id}`}>
-          <MovieCard movie={movie} />
-        </Link>
-      ))}
+      <fieldset>
+        <input type="radio" id="all" name="watched" onClick={()=>{setWatched(null)}}/>
+        <label htmlFor="all">All</label>
+
+        <input type="radio" id="watched" name="watched" onClick={()=>{setWatched(true)}}/>
+        <label htmlFor="watched">Watched</label>
+
+        <input type="radio" id="unwatched" name="watched" onClick={()=>{setWatched(false)}}/>
+        <label htmlFor="unwatched">Unwatched</label>
+      </fieldset>
+
+      {watched === null ? (
+        filteredMovies.map((movie) => (
+          <Link key={movie._id} to={`/movie/${movie._id}`}>
+            <MovieCard movie={movie} />
+          </Link>
+        ))
+      ) : watched ? (
+        <h1>true</h1>
+      ) : (
+        <h1>false</h1>
+      )}
     </div>
   );
 }
