@@ -1,5 +1,7 @@
+import {useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase/config";
+import "./NewMoviePage.css"
 
 const initialFormData = {
   title: "",
@@ -15,7 +17,7 @@ const initialFormData = {
 // THIS MIGHT GO TO USECONTEXT()!!!!
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function NewMoviePage() {
+function NewMoviePage({changesDiscarded}) {
   const [formData, setFormData] = useState(initialFormData);
 
   function handleOnChange(e) {
@@ -37,6 +39,8 @@ function NewMoviePage() {
     }
   }
 
+  const navigate = useNavigate()
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
@@ -49,100 +53,122 @@ function NewMoviePage() {
       .catch((error) => {
         console.log(error);
       });
+      navigate(`/allmovies`)
   }
 
   return (
     <section className="new-movie-section">
+      <div className="back-button-link">
+        <button className="back-button" onClick={changesDiscarded}>←</button>
+      </div>
       <div className="new-movie-header">
-        <button>back</button>
-        <h2>Add Movie</h2>
-        <button type="submit" form="create-form">
-          save
-        </button>
+        <h2>New Movie</h2>
+        <div className="right-header">
+          <button className="cancel-button" onClick={changesDiscarded}>
+          Cancel
+          </button>
+          <button className="edit-button" type="submit" form="create-form">
+          Save
+          </button>
+        </div>
       </div>
 
-      <form id="create-form" onSubmit={handleSubmit}>
-        <div className="form-div title">
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={formData.title}
-            onChange={handleOnChange}
-          />
-        </div>
-        <fieldset>
-          <legend>Genre:</legend>
-          {genresArray.map((genre, index) => {
-            return (
-              <label key={index}>
+      <div className="new-movie-body">
+        <div className="new-left-side-content">
+          <form id="create-form" onSubmit={handleSubmit}>
+        
+            <label htmlFor="title">Title:</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              value={formData.title}
+              onChange={handleOnChange}
+            />
+            
+            <div className="form-div watched">
+              <label htmlFor="watched">Watched:
                 <input
                   type="checkbox"
-                  name="genre"
-                  value={genre}
+                  id="watched"
+                  value={formData.watched}
                   onChange={handleOnChange}
                 />
-                {genre}
               </label>
-            );
-          })}
-        </fieldset>
-        <div className="form-div release">
-          <label htmlFor="release_date">Release Date:</label>
-          <input
-            type="date"
-            id="release_date"
-            value={formData.release_date}
-            onChange={handleOnChange}
-          />
+            </div>
+
+              <label htmlFor="release_date">Release Date:</label>
+              <input
+                type="date"
+                id="release_date"
+                value={formData.release_date}
+                onChange={handleOnChange}
+              />
+
+            <div className="input-group">
+            <div className="form-div rotten-tomatoes">
+              <label htmlFor="rating">🍅 Rotten Tomatoes:</label>
+              <input
+                className="input-group-label"
+                type="number"
+                id="rotten_tomatoes"
+                value={formData.rotten_tomatoes}
+                onChange={handleOnChange}
+              />
+            </div>
+            <div className="form-div rotten-tomatoes">
+              <label htmlFor="rating">⭐️ Audience Rating:</label>
+              <input
+                className="input-group-label"
+                type="number"
+                id="audience_rating"
+                value={formData.audience_rating}
+                onChange={handleOnChange}
+              />
+            </div>
+            </div>
+       
+
+            <legend>🎭 Genre:</legend>
+            <div className="genre-checkboxes">
+            {genresArray.map((genre, index) => {
+              return (
+                <label key={index}>
+                  <input
+                    type="checkbox"
+                    name="genre"
+                    value={genre}
+                    onChange={handleOnChange}
+                  />
+                  {genre}
+                </label>
+              );
+            })}
+            </div>
+   
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                id="description"
+                value={formData.description}
+                onChange={handleOnChange}
+              />
+
+              <label htmlFor="image">Image:</label>
+              <input
+                type="text"
+                id="image"
+                value={formData.image}
+                onChange={handleOnChange}
+              />
+          </form>
         </div>
-        <div className="form-div rotten-tomatoes">
-          <label htmlFor="rating">Rotten Tomatoes:</label>
-          <input
-            type="number"
-            id="rotten_tomatoes"
-            value={formData.rotten_tomatoes}
-            onChange={handleOnChange}
-          />
+        <div className="new-right-side-content">
+            {formData.image && (
+              <img src={formData.image} alt={formData.title || ''} />
+            )}
         </div>
-        <div className="form-div rotten-tomatoes">
-          <label htmlFor="rating">Audience Rating:</label>
-          <input
-            type="number"
-            id="audience_rating"
-            value={formData.audience_rating}
-            onChange={handleOnChange}
-          />
-        </div>
-        <div className="form-div watched">
-          <label htmlFor="watched">Watched:</label>
-          <input
-            type="text"
-            id="watched"
-            value={formData.watched}
-            onChange={handleOnChange}
-          />
-        </div>
-        <div className="form-div description">
-          <label htmlFor="description">Description:</label>
-          <input
-            type="text"
-            id="description"
-            value={formData.description}
-            onChange={handleOnChange}
-          />
-        </div>
-        <div className="form-div image">
-          <label htmlFor="image">Image:</label>
-          <input
-            type="text"
-            id="image"
-            value={formData.image}
-            onChange={handleOnChange}
-          />
-        </div>
-      </form>
+      </div>
     </section>
   );
 }

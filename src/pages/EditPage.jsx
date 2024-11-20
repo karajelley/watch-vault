@@ -16,7 +16,7 @@ const initialFormData = {
 
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function EditPage({ moviesArray, setMoviesArray }) {
+function EditPage({ moviesArray, setMoviesArray, changesDiscarded }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData);
@@ -70,12 +70,12 @@ function EditPage({ moviesArray, setMoviesArray }) {
   return (
     <section className="edit-movie-section">
         <div className="back-button-link">
-            <button className="back-button" onClick={() => navigate(-1)}>←</button>
+            <button className="back-button" onClick={changesDiscarded}>←</button>
         </div>
         <div className="edit-movie-header">
             <h2>Edit Movie</h2>
             <div className="right-header">
-            <button className="cancel-button" onClick={() => navigate(-1)}>
+            <button className="cancel-button" onClick={changesDiscarded}>
             Cancel
             </button>
             <button className="edit-button" type="submit" form="edit-form">
@@ -104,13 +104,14 @@ function EditPage({ moviesArray, setMoviesArray }) {
                     onChange={handleOnChange}
                     />
                 </label>
-                    <label htmlFor="release_date">Release Date:</label>
-                    <input
-                    type="date"
-                    name="release_date"
-                    value={formData.release_date || ""}
-                    onChange={handleOnChange}
-                    />
+
+                <label htmlFor="release_date">Release Date:</label>
+                <input
+                type="date"
+                name="release_date"
+                value={formData.release_date || ""}
+                onChange={handleOnChange}
+                />
 
 
 
@@ -140,27 +141,24 @@ function EditPage({ moviesArray, setMoviesArray }) {
 
                 </div>
 
-                  
-                    <legend>🎭 Genre:</legend>
-                    <div className="genre-checkboxes">
+                
+                <legend>🎭 Genre:</legend>
+                <div className="genre-checkboxes">
 
-                    {genresArray.map((genre, index) => (
-                        <label key={index}>
-                        <input
-                            type="checkbox"
-                            name="genre"
-                            value={genre}
-                            checked={formData.genre?.includes(genre) || false}
-                            onChange={handleOnChange}
-                        />
-                        {genre}
-                        </label>
-                    ))}
-                    </div>
+                {genresArray.map((genre, index) => (
+                    <label key={index}>
+                    <input
+                        type="checkbox"
+                        name="genre"
+                        value={genre}
+                        checked={formData.genre?.includes(genre) || false}
+                        onChange={handleOnChange}
+                    />
+                    {genre}
+                    </label>
+                ))}
+                </div>
              
-
-
-
                 <label htmlFor="description">Description:</label>
                 <textarea
                 name="description"
