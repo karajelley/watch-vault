@@ -50,9 +50,9 @@ function EditPage({ moviesArray, setMoviesArray }) {
     if (error) {
       console.error("Error updating movie:", error);
     } else if (data && data.length > 0) {
-      setMoviesArray((prevMovies) =>
+      {/*setMoviesArray((prevMovies) =>
         prevMovies.map((movie) => (movie._id === id ? data[0] : movie))
-      );
+      );*/}
       navigate(`/movie/${id}`);
     } else {
       console.error("No data returned from update operation.");
