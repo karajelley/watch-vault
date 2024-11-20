@@ -1,0 +1,44 @@
+
+
+.footer-container {
+    position: fixed;
+    bottom: 0rem;
+    left: 0rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    background: linear-gradient(
+        to top, 
+        rgba(25, 7, 37) 25%,
+        rgba(176, 53, 255, 0.10)100% 
+        );
+}
+
+.copyright-div,
+.info-div,
+.github-div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member-names {
+    display: flex;
+    gap: 1rem;
+}
+
+.member-links {
+    color: var(--disabled-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.member-links:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}

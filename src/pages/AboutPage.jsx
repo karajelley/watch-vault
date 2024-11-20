@@ -4,10 +4,9 @@ function AboutPage() {
   return (
     <div className="about-container">
       <h1>About Us</h1>
+      <p>Welcome to our movie library, WatchVault from DKD Studios.</p>
+      <img src="src/assets/full-logo.png" alt="WatchVault Logo" width="30%"/>
       <p>
-        Welcome to our movie library, Watchvault
-        <br />
-        <br></br>
         The app is designed to be user-friendly, with an intuitive interface
         that makes it easy to navigate and interact with movies. Built with core
         React concepts such as state management and component-based
