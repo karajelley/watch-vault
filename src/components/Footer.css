@@ -10,11 +10,7 @@
     justify-content: space-between;
     align-items: center;
     color: var(--text-color);
-    background: linear-gradient(
-        to top, 
-        rgba(25, 7, 37) 25%,
-        rgba(176, 53, 255, 0.10)100% 
-        );
+    background-color: #290D3C;
 }
 
 .copyright-div,

@@ -67,7 +67,6 @@
     gap: 1rem;
 }
 
-.cancel-button,
 .delete-button-popup {
     padding: 0.5rem 1rem;
     border: none;
@@ -76,19 +75,9 @@
     font-size: 1rem;
 }
 
-.cancel-button {
-    background-color: transparent;
-    color: var(--text-color);
-    border: solid .15rem var(--text-color);
-}
-
 .delete-button-popup {
     background-color: #d32f2f;
     color: var(--text-color);
-}
-
-.cancel-button:hover {
-    color: #FFFF;
 }
 
 .delete-button-popup:hover {

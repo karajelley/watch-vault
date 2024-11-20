@@ -64,9 +64,9 @@ function AllMoviesPage({ moviesArray, getMovies }) {
   return (
     <section className="all-movies-section">
       <Searchbar moviesArray={moviesArray} onSearch={handleSearchInput} />
-      <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
       <button onClick={sortByTomatoes}>SORT BY 🍅</button>
       <button onClick={sortByTitle}>SORT ALPH</button>
+      <button className="primary-button" onClick={() => navigate("/newmovie")}>New Movie +</button>
       <fieldset>
         <input
           type="radio"

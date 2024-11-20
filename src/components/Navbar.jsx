@@ -10,7 +10,6 @@ function Navbar() {
       </Link>
       <div className="nav-links">
         <NavLink className="nav-link" to={"/"}>Movies</NavLink>
-        <NavLink className="nav-link" to={"/allmovies"}>all movies</NavLink>
         <NavLink className="nav-link" to={"/about"}>About Us</NavLink>
       </div>
       </nav>
