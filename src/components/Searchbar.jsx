@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./SearchBar.css";
+import "./Searchbar.css";
 
-function SearchBar({ moviesArray, onSearch }) {
+function Searchbar({ moviesArray, onSearch }) {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const navigate = useNavigate();
@@ -55,4 +55,4 @@ function SearchBar({ moviesArray, onSearch }) {
   );
 }
 
-export default SearchBar;
+export default Searchbar;

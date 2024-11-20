@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import SearchBar from "../components/Searchbar.jsx";
+import Searchbar from "../components/Searchbar.jsx";
 //the way to import functions from external js file
 // import {
 //   handleSearchInput,
@@ -50,7 +50,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
   return (
     <div>
       <h1>all movies page</h1>
-      <SearchBar moviesArray={moviesArray} onSearch={handleSearchInput} />
+      <Searchbar moviesArray={moviesArray} onSearch={handleSearchInput} />
       <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
       <button onClick={sortByTomatoes}>SORT BY 🍅</button>
       <button onClick={sortByTitle}>SORT ALPH</button>
