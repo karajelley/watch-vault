@@ -51,6 +51,7 @@ desktop: width > 1024px
     height: 100dvh;
     background-color: var(--background-color);
     height: 100%;
+    padding-bottom: 5rem;
 }
 
 
