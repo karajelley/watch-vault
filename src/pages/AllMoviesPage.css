@@ -1,0 +1,7 @@
+.all-movies-section{
+    padding: 2rem;
+    height: fit-content;
+    .movie-cards-container{
+        display: flex;
+    }
+}

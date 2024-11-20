@@ -1,0 +1,11 @@
+.movie-card{
+    width: 20rem;
+    height: 25rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5%;
+    text-align: center;
+    .movie-img{
+        width: 95%;
+    }
+}

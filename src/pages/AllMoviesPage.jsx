@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import Searchbar from "../components/Searchbar.jsx";
+import "./AllMoviesPage.css";
 //the way to import functions from external js file
 // import {
 //   handleSearchInput,
@@ -48,7 +49,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
   }, [moviesArray]);
 
   return (
-    <div>
+    <section className="all-movies-section">
       <h1>all movies page</h1>
       <Searchbar moviesArray={moviesArray} onSearch={handleSearchInput} />
       <button onClick={() => navigate("/newmovie")}>Add New Movie</button>
@@ -86,25 +87,26 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         />
         <label htmlFor="unwatched">Unwatched</label>
       </fieldset>
-
-      {watched === null // by default will we this, since "all" is watched === null
-        ? filteredMovies.map((movie) => (
-            <Link key={movie._id} to={`/movie/${movie._id}`}>
-              <MovieCard movie={movie} />
-            </Link>
-          ))
-        : filteredMovies //if watched is not null:
-            .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
-            .map(
-              (
-                movie //then, render the filtered list
-              ) => (
-                <Link key={movie._id} to={`/movie/${movie._id}`}>
-                  <MovieCard movie={movie} />
-                </Link>
-              )
-            )}
-    </div>
+      <div className="movie-cards-container">
+        {watched === null // by default will we this, since "all" is watched === null
+          ? filteredMovies.map((movie) => (
+              <Link key={movie._id} to={`/movie/${movie._id}`}>
+                <MovieCard movie={movie} />
+              </Link>
+            ))
+          : filteredMovies //if watched is not null:
+              .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
+              .map(
+                (
+                  movie //then, render the filtered list
+                ) => (
+                  <Link key={movie._id} to={`/movie/${movie._id}`}>
+                    <MovieCard movie={movie} />
+                  </Link>
+                )
+              )}
+      </div>
+    </section>
   );
 }
 
