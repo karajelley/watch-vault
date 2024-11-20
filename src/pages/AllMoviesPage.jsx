@@ -3,6 +3,9 @@ import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import Searchbar from "../components/Searchbar.jsx";
 import "./AllMoviesPage.css";
+import leftButton from "../assets/left.svg";
+import rightButton from "../assets/right.svg";
+
 //the way to import functions from external js file
 // import {
 //   handleSearchInput,
@@ -88,6 +91,9 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         <label htmlFor="unwatched">Unwatched</label>
       </fieldset>
       <div className="movie-cards-container">
+        <button className="scroll-btn left">
+          <img src={leftButton} alt="left scroll button" />
+        </button>
         {watched === null // by default will we this, since "all" is watched === null
           ? filteredMovies.map((movie) => (
               <Link key={movie._id} to={`/movie/${movie._id}`}>
@@ -105,6 +111,9 @@ function AllMoviesPage({ moviesArray, getMovies }) {
                   </Link>
                 )
               )}
+        <button className="scroll-btn right">
+          <img src={rightButton} alt="right scroll button" />
+        </button>
       </div>
     </section>
   );
