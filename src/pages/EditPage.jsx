@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import supabase from "../supabase/config";
-import "./EditPage.css"
+import "./FormStyling.css"
 
 const initialFormData = {
   title: "",
@@ -50,9 +50,9 @@ function EditPage({ moviesArray, setMoviesArray, changesDiscarded }) {
     if (error) {
       console.error("Error updating movie:", error);
     } else if (data && data.length > 0) {
-      {/*setMoviesArray((prevMovies) =>
+      {setMoviesArray((prevMovies) =>
         prevMovies.map((movie) => (movie._id === id ? data[0] : movie))
-      );*/}
+      );}
       navigate(`/movie/${id}`);
     } else {
       console.error("No data returned from update operation.");

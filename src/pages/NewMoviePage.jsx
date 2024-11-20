@@ -1,7 +1,7 @@
 import {useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase/config";
-import "./NewMoviePage.css"
+import "./FormStyling.css"
 
 const initialFormData = {
   title: "",
@@ -147,11 +147,13 @@ function NewMoviePage({changesDiscarded}) {
             </div>
    
               <label htmlFor="description">Description:</label>
-              <input
+              <textarea
                 type="text"
                 id="description"
                 value={formData.description}
                 onChange={handleOnChange}
+                rows="8"
+                cols="50" 
               />
 
               <label htmlFor="image">Image:</label>

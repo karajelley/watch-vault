@@ -1,5 +1,8 @@
+/* This is a stlying sheet for form styles that are used across multiple forms */
 
-.edit-movie-section {
+
+
+.edit-movie-section, .new-movie-section {
     display: flex;
     flex-direction: column;
     background-color: var(--background-color);
@@ -7,7 +10,7 @@
     gap: 2rem;
 }
 
-.edit-movie-header {
+.edit-movie-header,  .new-movie-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,12 +21,12 @@
 
 }
 
-.edit-movie-body {
+.edit-movie-body, .new-movie-body  {
     display: flex;
     justify-content: space-between;
 }
 
-.edit-left-side-content {
+.edit-left-side-content, .new-left-side-content {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -32,7 +35,7 @@
 
 }
 
-.edit-right-side-content {
+.edit-right-side-content, .new-right-side-content {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -47,7 +50,7 @@
 
 }
 
-#edit-form {
+#edit-form, #create-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
