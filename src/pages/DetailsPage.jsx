@@ -76,7 +76,7 @@ function DetailsPage({moviesArray, setMoviesArray}){
                         <h4>{movie.watched ? '✅ Watched' : '🙈 Unwatched'}</h4>
                         <h4>🎭 Genre: {formattedGenre}</h4>
                         <h4>🍅 Rotton Tomatoes: {movie.rotten_tomatoes}%</h4>
-                        <h4>⭐️ Audience Rating: {movie.audience_rating*10}%</h4>
+                        <h4>⭐️ Audience Rating: {movie.audience_rating}%</h4>
                         </div>
 
             <div className="description">

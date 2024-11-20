@@ -3,7 +3,7 @@ import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../components/Searchbar.jsx";
 
-function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
+function AllMoviesPage({ moviesArray, setMoviesArray, getMovies}) {
   const navigate = useNavigate();
   const [filteredMovies, setFilteredMovies] = useState(moviesArray);
 
@@ -11,6 +11,8 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
     navigate(`/movie/${movie._id}`);
   };
 
+
+  //Searchbar: Movie array updates on text input
   const handleSearchInput = (searchText) => {
     if (!searchText.trim()) {
       setFilteredMovies(moviesArray);
@@ -33,6 +35,7 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
     arrayCopy.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredMovies(arrayCopy);
   };
+
 
   useEffect(() => {
     if (moviesArray.length === 0) {
