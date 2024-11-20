@@ -1,0 +1,35 @@
+.all-movies-section {
+
+    .movie-cards-container {
+        padding: 2rem;
+        display: flex;
+        height: 110%;
+        gap: 2rem;
+        overflow: auto;
+        white-space: nowrap;
+        scrollbar-color: var(--background-color) rgb(244, 227, 255, 0.05);
+        scrollbar-width: thin;
+        position: relative;
+        scroll-behavior: smooth;
+        .scroll-btn{
+            background-color: var(--background-color);
+            border: none;
+            border-radius: 1.3rem;
+            cursor: pointer;
+            position: absolute;
+            z-index: 2;
+            height: 88%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .scroll-btn:hover{
+            background-color:rgb(244, 227, 255, 0.05);
+
+        }
+        .right{
+            right: 0;
+        }
+    }
+
+
+}

@@ -56,44 +56,42 @@
     gap: 1rem;
 }
 
-input, textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(249, 239, 255, 0.2);
-    color: var(--text-color);
-  }
+input,
+textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(249, 239, 255, 0.2);
+  color: var(--text-color);
+}
 
-  input:focus, textarea:focus {
-    border: solid 0.25rem var(--primary-color);
-  }
+input:focus,
+textarea:focus {
+  border: solid 0.25rem var(--primary-color);
+}
 
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-  }
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
 
-  input[type="checkbox"] {
-    margin-left: .5rem;
-    margin-right: .5rem;
-  }
+input[type="checkbox"] {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
 
-  .input-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-around
-  }
+.input-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around
+}
 
-  .input-group-label {
-    margin-top: .5rem; 
-    width: 100%;
+.input-group-label {
+  margin-top: .5rem;
+  width: 100%;
 
-  }
+}
 
-  .genre-checkboxes {
-    display: flex;
-    gap: .5rem;
-  }
-
-
-
-
+.genre-checkboxes {
+  display: flex;
+  gap: .5rem;
+}

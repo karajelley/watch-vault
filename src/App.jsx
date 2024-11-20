@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useNavigate} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "./supabase/config";
 import Navbar from "./components/Navbar.jsx";
@@ -16,25 +16,26 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
-  const [moviesArray, setMoviesArray] = useState([])
+  const [moviesArray, setMoviesArray] = useState([]);
 
   async function getMovies() {
     try {
       let response = await supabase
-      .from("moviesdb") //name of the table in superbase
-      .select("*"); //we want to import all table entries
-      setMoviesArray(response.data);  
-    } catch {(error) => console.log("Error fetching data: ", error);
+        .from("moviesdb") //name of the table in superbase
+        .select("*"); //we want to import all table entries
+      setMoviesArray(response.data);
+    } catch {
+      (error) => console.log("Error fetching data: ", error);
     }
   }
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function changesDiscarded() {
-    navigate(-1)
-    alert("Changes discarded")
+    navigate(-1);
+    alert("Changes discarded");
   }
- // console.log("this is the array", moviesArray)
+  // console.log("this is the array", moviesArray)
 
   return (
     <>
