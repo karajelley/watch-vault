@@ -3,7 +3,7 @@ import MovieCard from "../components/MovieCard.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../components/Searchbar.jsx";
 
-function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
+function AllMoviesPage({ moviesArray, setMoviesArray, getMovies}) {
   const navigate = useNavigate();
   const [filteredMovies, setFilteredMovies] = useState(moviesArray);
   const [watched, setWatched] = useState(null);
@@ -34,6 +34,7 @@ function AllMoviesPage({ moviesArray, setMoviesArray, getMovies }) {
     arrayCopy.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredMovies(arrayCopy);
   };
+
 
   // const handleWatched = () => {
   //   setWatched(!watched);

@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate} from "react-router-dom";
 import { useState } from "react";
 import supabase from "./supabase/config";
 import Navbar from "./components/Navbar.jsx";
@@ -24,6 +24,13 @@ function App() {
     } catch {(error) => console.log("Error fetching data: ", error);
     }
   }
+
+  const navigate = useNavigate()
+
+  function changesDiscarded() {
+    navigate(-1)
+    alert("Changes discarded")
+  }
  // console.log("this is the array", moviesArray)
 
   return (
@@ -34,8 +41,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/allmovies" element={<AllMoviesPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} getMovies={getMovies}/>}/>
         <Route path="/movie/:id" element={<DetailsPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>} />
-        <Route path="/newmovie" element={<NewMoviePage getMovies={getMovies} />} />
-        <Route path="/movie/:id/editmovie" element={<EditPage moviesArray={moviesArray} setMoviesArray={setMoviesArray}/>}/>
+        <Route path="/newmovie" element={<NewMoviePage getMovies={getMovies} changesDiscarded={changesDiscarded} />} />
+        <Route path="/movie/:id/editmovie" element={<EditPage moviesArray={moviesArray} setMoviesArray={setMoviesArray} changesDiscarded={changesDiscarded}/>}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
