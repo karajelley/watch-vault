@@ -1,7 +1,5 @@
-function ErrorPage(){
-    return
-    <>
-    </>
+function ErrorPage() {
+  return <section></section>
 }
 
-export default ErrorPage
+export default ErrorPage;

@@ -1,7 +1,6 @@
 import {useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../supabase/config";
-import "./NewMoviePage.css"
 
 const initialFormData = {
   title: "",
@@ -17,7 +16,7 @@ const initialFormData = {
 // THIS MIGHT GO TO USECONTEXT()!!!!
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function NewMoviePage({changesDiscarded}) {
+function NewMoviePage({changesDiscarded, moviesArray, setMoviesArray}) {
   const [formData, setFormData] = useState(initialFormData);
 
   function handleOnChange(e) {
@@ -39,7 +38,7 @@ function NewMoviePage({changesDiscarded}) {
     }
   }
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -53,6 +52,7 @@ function NewMoviePage({changesDiscarded}) {
       .catch((error) => {
         console.log(error);
       });
+      setMoviesArray([...moviesArray, formData])
       navigate(`/allmovies`)
   }
 
