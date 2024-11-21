@@ -5,13 +5,23 @@ import DeletePopup from "../components/DeletePopup.jsx";
 import { notify } from "../utils/toastUtils.js";
 import "./DetailsPage.css";
 
-function DetailsPage({ moviesArray, setMoviesArray }) {
+function DetailsPage({moviesArray, setMoviesArray}){
+    
+
+   // console.log("this is the array", moviesArray)
+   const navigate = useNavigate();
+
   const { id } = useParams();
 
   const movie = moviesArray.find((movieItem) => movieItem._id === id);
   console.log(movie);
 
-  const navigate = useNavigate();
+  // redirect to the error page when movie id is not found
+  if (!movie) {
+    navigate("*"); 
+    return null
+  }
+
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
