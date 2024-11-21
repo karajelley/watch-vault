@@ -172,7 +172,6 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
               onChange={handleOnChange}
             />
 
-            {/* <button type="submit">Save Changes</button> */}
           </form>
         </div>
         <div className="edit-right-side-content">

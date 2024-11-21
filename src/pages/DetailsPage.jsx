@@ -9,6 +9,7 @@ function DetailsPage({moviesArray, setMoviesArray}){
     
 
    // console.log("this is the array", moviesArray)
+   const navigate = useNavigate();
 
   const { id } = useParams();
   // console.log("this is the params id:" , id)
@@ -16,7 +17,12 @@ function DetailsPage({moviesArray, setMoviesArray}){
   const movie = moviesArray.find((movieItem) => movieItem._id === id);
   console.log(movie);
 
-  const navigate = useNavigate();
+  // redirect to the error page when movie id is not found
+  if (!movie) {
+    navigate("*"); 
+    return null
+  }
+
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
