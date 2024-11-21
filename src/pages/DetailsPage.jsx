@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import supabase from "../supabase/config";
 import DeletePopup from "../components/DeletePopup.jsx";
@@ -7,15 +7,18 @@ import "./DetailsPage.css";
 
 function DetailsPage({ moviesArray, setMoviesArray }) {
   const navigate = useNavigate();
-
   const { id } = useParams();
 
   const movie = moviesArray.find((movieItem) => movieItem._id === id);
 
-  // redirect to the error page when movie id is not found
+  useEffect(() => {
+    if (!movie) {
+      navigate("*");
+    }
+  }, [movie, navigate]); 
+
   if (!movie) {
-    navigate("*");
-    return null;
+    return null; 
   }
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -30,7 +33,6 @@ function DetailsPage({ moviesArray, setMoviesArray }) {
         throw resp.error;
       }
 
-      // Update the moviesArray state by removing the deleted movie
       setMoviesArray((prevMovies) =>
         prevMovies.filter((movie) => movie._id !== id)
       );
@@ -44,7 +46,6 @@ function DetailsPage({ moviesArray, setMoviesArray }) {
     }
   }
 
-  //format the genre array
   const formattedGenre =
     movie.genre && movie.genre.length > 0 ? movie.genre.join(", ") : "";
 
