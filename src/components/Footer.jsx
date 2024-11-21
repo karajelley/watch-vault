@@ -13,17 +13,11 @@ function Footer(){
                 </div>
                 <div className="info-div">
                     <div className="member-names">
-                        <Link className="member-links">
                             <p>Kara Jelley</p>
-                        </Link>
                         <p>|</p>
-                        <Link className="member-links">
                             <p>Dani Di Donato</p>
-                        </Link>
                         <p>|</p>
-                        <Link className="member-links">
                             <p>Diego Cisneros</p>
-                        </Link>
                     </div>
                 </div>
                 <div className="github-div">
