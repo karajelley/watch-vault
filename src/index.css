@@ -72,3 +72,11 @@ button {
 a {
     text-decoration: none;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px){
+    #root{
+        margin-bottom: 4rem;
+        padding: 0 1rem 3rem 1rem;
+    }
+}
