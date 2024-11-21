@@ -31,3 +31,8 @@
         object-position: center;
     }
 }
+@media (max-width: 750px ) {
+    .movie-card{
+        scale: 80%;
+    }
+}

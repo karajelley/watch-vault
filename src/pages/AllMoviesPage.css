@@ -24,6 +24,7 @@
             scrollbar-color: var(--background-color) rgb(244, 227, 255, 0.05);
             scrollbar-width: thin;
             scroll-behavior: smooth;
+            
         }
 
         .scroll-btn {
@@ -74,6 +75,7 @@
     }
     .movie-cards-container {
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
         white-space: normal; 
     }
