@@ -33,7 +33,6 @@ function App() {
     navigate(-1);
     alert("Changes discarded");
   }
-  // console.log("this is the array", moviesArray)
 
   return (
     <>

@@ -72,7 +72,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
           New Movie +
         </button>
         <button onClick={sortByTomatoes} className="sort-btn">
-          Sort By R.T.
+          Sort By Tomatoes
         </button>
         <button onClick={sortByTitle} className="sort-btn">
           Sort By Title
@@ -112,7 +112,39 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         </fieldset>
       </div>
       <section className="scroll-container">
-        <button className="scroll-btn left" onClick={slideLeft}>
+        {filteredMovies.length === 0 ? (
+          <h1>upsss, no movies</h1> ///IMAGE HERE!!!
+        ) : (
+          <>
+            <button className="scroll-btn left" onClick={slideLeft}>
+              <img src={leftButton} alt="left scroll button" />
+            </button>
+            <div className="movie-cards-container">
+              {watched === null // by default will we this, since "all" is watched === null
+                ? filteredMovies.map((movie) => (
+                    <Link key={movie._id} to={`/movie/${movie._id}`}>
+                      <MovieCard movie={movie} />
+                    </Link>
+                  ))
+                : filteredMovies //if watched is not null:
+                    .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
+                    .map(
+                      (
+                        movie //then, render the filtered list
+                      ) => (
+                        <Link key={movie._id} to={`/movie/${movie._id}`}>
+                          <MovieCard movie={movie} />
+                        </Link>
+                      )
+                    )}
+            </div>
+            <button className="scroll-btn right" onClick={slideRight}>
+              <img src={rightButton} alt="right scroll button" />
+            </button>
+          </>
+        )}
+
+        {/* <button className="scroll-btn left" onClick={slideLeft}>
           <img src={leftButton} alt="left scroll button" />
         </button>
         <div className="movie-cards-container">
@@ -136,7 +168,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         </div>
         <button className="scroll-btn right" onClick={slideRight}>
           <img src={rightButton} alt="right scroll button" />
-        </button>
+        </button> */}
       </section>
     </section>
   );

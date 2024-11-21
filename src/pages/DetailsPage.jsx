@@ -5,23 +5,18 @@ import DeletePopup from "../components/DeletePopup.jsx";
 import { notify } from "../utils/toastUtils.js";
 import "./DetailsPage.css";
 
-function DetailsPage({moviesArray, setMoviesArray}){
-    
-
-   // console.log("this is the array", moviesArray)
-   const navigate = useNavigate();
+function DetailsPage({ moviesArray, setMoviesArray }) {
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
   const movie = moviesArray.find((movieItem) => movieItem._id === id);
-  console.log(movie);
 
   // redirect to the error page when movie id is not found
   if (!movie) {
-    navigate("*"); 
-    return null
+    navigate("*");
+    return null;
   }
-
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
@@ -34,7 +29,6 @@ function DetailsPage({moviesArray, setMoviesArray}){
       if (resp.error) {
         throw resp.error;
       }
-      console.log("Item deleted:", resp);
 
       // Update the moviesArray state by removing the deleted movie
       setMoviesArray((prevMovies) =>

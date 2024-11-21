@@ -42,12 +42,10 @@ function NewMoviePage({ changesDiscarded, getMovies }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
     supabase
       .from("moviesdb")
       .insert([formData])
       .then((res) => {
-        console.log(res);
         getMovies();
       })
       .catch((error) => {
