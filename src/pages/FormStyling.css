@@ -98,6 +98,13 @@ input[type="checkbox"] {
 /* MEDIA QUERIES */
 
 @media (max-width: 1024px){
+  .edit-movie-header,  .new-movie-header{
+    flex-direction: column-reverse;
+    gap:1.5rem;
+  }
+  .right-header{
+    scale: 70%;
+  }
   .edit-movie-body, .new-movie-body {
     padding: auto 2rem;
     flex-direction: column;

@@ -1,4 +1,4 @@
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,14 +12,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: linear-gradient(
-        to bottom, 
-        rgba(25, 7, 37) 65%, /* Semi-transparent red */
-        rgba(176, 53, 255, 0.10)100% /* Semi-transparent blue */
-        );
-    
+    background: linear-gradient(to bottom,
+            rgba(25, 7, 37) 65%,
+            rgba(176, 53, 255, 0.10)100%);
 
-    .nav-container{
+
+    .nav-container {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -39,7 +37,7 @@
     justify-content: space-between;
     gap: 0.8rem;
     margin-top: 0.8rem;
-    
+
 }
 
 .nav-link {
@@ -56,5 +54,6 @@
 
 .nav-link.active {
     font-weight: 800;
+    scale: 110%;
     color: var(--primary-color);
 }
