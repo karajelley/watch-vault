@@ -58,7 +58,7 @@ function DetailsPage({moviesArray, setMoviesArray}){
         />
       )}
       <section className="details-movie-section">
-        <Link className="back-button-link" to="/allmovies">
+        <Link className="back-button-link" to="/">
           <button className="back-button">←</button>
         </Link>
         <div className="details-movie-header">

@@ -51,13 +51,13 @@ function NewMoviePage({changesDiscarded, getMovies}) {
       .insert([formData])
       .then((res) => {
         console.log(res);
+        getMovies();
       })
       .catch((error) => {
         console.log(error);
       });
       notify("Movie created successfully!", { type: "success" });
 
-      await getMovies();
       
       navigate("/");
   }
