@@ -41,14 +41,14 @@ function AllMoviesPage({ moviesArray, getMovies }) {
     setFilteredMovies(arrayCopy);
   };
 
-  const slideLeft =() =>{
-    let slider = document.querySelector(".movie-cards-container")
-    slider.scrollLeft =  slider.scrollLeft - 400;
+  const slideLeft = () => {
+    let slider = document.querySelector(".movie-cards-container");
+    slider.scrollLeft = slider.scrollLeft - 400;
   };
 
-  const slideRight =() =>{
-    let slider = document.querySelector(".movie-cards-container")
-    slider.scrollLeft =  slider.scrollLeft + 400;
+  const slideRight = () => {
+    let slider = document.querySelector(".movie-cards-container");
+    slider.scrollLeft = slider.scrollLeft + 400;
   };
 
   useEffect(() => {
@@ -64,41 +64,53 @@ function AllMoviesPage({ moviesArray, getMovies }) {
   return (
     <section className="all-movies-section">
       <Searchbar moviesArray={moviesArray} onSearch={handleSearchInput} />
-      <button onClick={sortByTomatoes}>SORT BY 🍅</button>
-      <button onClick={sortByTitle}>SORT ALPH</button>
-      <button className="primary-button" onClick={() => navigate("/newmovie")}>New Movie +</button>
-      <fieldset>
-        <input
-          type="radio"
-          id="all"
-          name="watched"
-          onClick={() => {
-            setWatched(null);
-          }}
-          defaultChecked
-        />
-        <label htmlFor="all">All</label>
+      <div className="btns-div">
+        <button
+          className="primary-button"
+          onClick={() => navigate("/newmovie")}
+        >
+          New Movie +
+        </button>
+        <button onClick={sortByTomatoes} className="sort-btn">
+          Sort By R.T.
+        </button>
+        <button onClick={sortByTitle} className="sort-btn">
+          Sort By Title
+        </button>
 
-        <input
-          type="radio"
-          id="watched"
-          name="watched"
-          onClick={() => {
-            setWatched(true);
-          }}
-        />
-        <label htmlFor="watched">Watched</label>
+        <fieldset className="fieldset">
+          <input
+            type="radio"
+            id="all"
+            name="watched"
+            onClick={() => {
+              setWatched(null);
+            }}
+            defaultChecked
+          />
+          <label htmlFor="all">All</label>
 
-        <input
-          type="radio"
-          id="unwatched"
-          name="watched"
-          onClick={() => {
-            setWatched(false);
-          }}
-        />
-        <label htmlFor="unwatched">Unwatched</label>
-      </fieldset>
+          <input
+            type="radio"
+            id="watched"
+            name="watched"
+            onClick={() => {
+              setWatched(true);
+            }}
+          />
+          <label htmlFor="watched">Watched</label>
+
+          <input
+            type="radio"
+            id="unwatched"
+            name="watched"
+            onClick={() => {
+              setWatched(false);
+            }}
+          />
+          <label htmlFor="unwatched">Unwatched</label>
+        </fieldset>
+      </div>
       <section className="scroll-container">
         <button className="scroll-btn left" onClick={slideLeft}>
           <img src={leftButton} alt="left scroll button" />

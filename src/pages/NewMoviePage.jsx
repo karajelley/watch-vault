@@ -55,8 +55,7 @@ function NewMoviePage({ changesDiscarded, getMovies }) {
       });
     notify("Movie created successfully!", { type: "success" });
 
-      
-      navigate("/");
+    navigate("/");
   }
 
   return (

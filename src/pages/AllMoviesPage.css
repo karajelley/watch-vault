@@ -1,4 +1,10 @@
 .all-movies-section {
+    .btns-div{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+        justify-content: space-between;
+    }
     .scroll-container {
         position: relative;
         .movie-cards-container {
@@ -27,6 +33,9 @@
 
         .scroll-btn:hover {
             background-color: rgb(244, 227, 255, 0.05);
+            img{
+                scale: 130%;
+            }
 
         }
 
