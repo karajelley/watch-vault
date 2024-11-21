@@ -50,6 +50,9 @@
             border-top-left-radius: 1.3rem;
             border-bottom-left-radius: 1.3rem;
         }
+        .search-error-img{
+            width: 100%;
+        }
     }
 
 
