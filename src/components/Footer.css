@@ -1,5 +1,3 @@
-
-
 .footer-container {
     position: fixed;
     bottom: 0rem;
@@ -37,4 +35,40 @@
 .member-links:hover {
     color: var(--text-color);
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+    .copyright-div,
+    .info-div,
+    .github-div {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+    .copyright-div,
+    .info-div,
+    .github-div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.3rem;
+    }
+    .member-links {
+        font-size: 0.9rem; 
+    }
 }
