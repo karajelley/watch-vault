@@ -15,10 +15,10 @@ function DetailsPage({ moviesArray, setMoviesArray }) {
     if (!movie) {
       navigate("*");
     }
-  }, [movie, navigate]); 
+  }, [movie, navigate]);
 
   if (!movie) {
-    return null; 
+    return null;
   }
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);

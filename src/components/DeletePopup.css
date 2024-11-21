@@ -1,91 +1,90 @@
 .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .popup-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    /* For Safari support */
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  /* For Safari support */
+  z-index: 999;
 }
 
 .popup-container {
-    position: relative;
-    background-color: var(--background-color);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    /*     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
-    z-index: 1000;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    color: var(--text-color);
-    font-family: var(--body-font);
+  position: relative;
+  background-color: var(--background-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  /*     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+  z-index: 1000;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  color: var(--text-color);
+  font-family: var(--body-font);
 }
 
 .popup-elements {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 
-    p {
-        font-size: 1.25rem;
-    }
+  p {
+    font-size: 1.25rem;
+  }
 }
 
 .movie-title-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-    h4 {
-        font-family: var(--headings-font);
-        font-size: 1.5rem;
-    }
+  h4 {
+    font-family: var(--headings-font);
+    font-size: 1.5rem;
+  }
 }
 
 .popup-buttons {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .delete-button-popup {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .delete-button-popup {
-    background-color: #d32f2f;
-    color: var(--text-color);
+  background-color: #d32f2f;
+  color: var(--text-color);
 }
 
 .delete-button-popup:hover {
-    background-color: #b71c1c;
+  background-color: #b71c1c;
 }
 
 .delete-popup-image {
-    max-width: 30%;
-    border-radius: 0.25rem;
-
+  max-width: 30%;
+  border-radius: 0.25rem;
 }

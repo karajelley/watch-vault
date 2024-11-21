@@ -1,48 +1,46 @@
 .main-container {
-    padding-top: 10rem;
+  padding-top: 10rem;
 }
 
 /* global button styles */
 button,
 fieldset {
-    cursor: pointer;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
 }
 
-
 .back-button {
-    font-size: 2rem;
-    font-weight: 500;
-    background-color: transparent;
-    border: none;
-
+  font-size: 2rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
 }
 
 .primary-button {
-    font-size: 1rem;
-    font-weight: 400;
-    background-color: var(--primary-color);
-    border: var(--primary-color) solid 0.15rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: var(--primary-color);
+  border: var(--primary-color) solid 0.15rem;
 }
 
 .primary-button:hover {
-    background-color: var(--hover-color);
+  background-color: var(--hover-color);
 }
 
 .cancel-button,
 .sort-btn,
 .delete-button,
 fieldset {
-    font-size: 1rem;
-    background-color: transparent;
-    border: solid 0.15rem var(--text-color);
+  font-size: 1rem;
+  background-color: transparent;
+  border: solid 0.15rem var(--text-color);
 }
 
 .cancel-button:hover,
 .sort-btn:hover,
 .delete-button:hover,
 .back-button:hover {
-    background-color: rgba(244, 227, 255, 0.161);
-    color: white;
+  background-color: rgba(244, 227, 255, 0.161);
+  color: white;
 }

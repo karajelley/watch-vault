@@ -5,7 +5,7 @@ import Searchbar from "../components/Searchbar.jsx";
 import "./AllMoviesPage.css";
 import leftButton from "../assets/left.svg";
 import rightButton from "../assets/right.svg";
-import errorSearchImg from "../assets/search-error.png"
+import errorSearchImg from "../assets/search-error.png";
 
 function AllMoviesPage({ moviesArray, getMovies }) {
   const navigate = useNavigate();
@@ -107,7 +107,11 @@ function AllMoviesPage({ moviesArray, getMovies }) {
       </div>
       <section className="scroll-container">
         {filteredMovies.length === 0 ? (
-          <img src={errorSearchImg} alt="error search image" className="search-error-img" />
+          <img
+            src={errorSearchImg}
+            alt="error search image"
+            className="search-error-img"
+          />
         ) : (
           <>
             <button className="scroll-btn left" onClick={slideLeft}>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&display=swap");
 
 /* FONTS:
 
@@ -27,37 +27,36 @@ desktop: width > 1024px
  */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary-color: #B035FF;
-    --hover-color: #9C10FF;
-    --active-color: #9000FF;
-    --text-color: #F9EFFF;
-    --disabled-color: #F4E3FF;
-    --background-color: #190725;
-    --headings-font: "Bebas Neue", sans-serif;
-    --body-font: "Arimo", sans-serif;
+  --primary-color: #b035ff;
+  --hover-color: #9c10ff;
+  --active-color: #9000ff;
+  --text-color: #f9efff;
+  --disabled-color: #f4e3ff;
+  --background-color: #190725;
+  --headings-font: "Bebas Neue", sans-serif;
+  --body-font: "Arimo", sans-serif;
 }
 
 #root {
-    padding: 0 4rem;
-    height: 100dvh;
-    background-color: var(--background-color);
-    height: 100%;
-    padding-bottom: 5rem;
+  padding: 0 4rem;
+  height: 100dvh;
+  background-color: var(--background-color);
+  height: 100%;
+  padding-bottom: 5rem;
 }
-
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: var(--headings-font);
-    color: var(--text-color);
+  font-family: var(--headings-font);
+  color: var(--text-color);
 }
 
 p,
@@ -65,19 +64,18 @@ a,
 input,
 label,
 button {
-    font-family: var(--body-font);
-    color: var(--text-color);
+  font-family: var(--body-font);
+  color: var(--text-color);
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 480px){
-    #root{
-        margin-bottom: 6rem;
-        padding: 0 1rem 3rem 1rem;
-    
-    }
+@media (max-width: 480px) {
+  #root {
+    margin-bottom: 6rem;
+    padding: 0 1rem 3rem 1rem;
+  }
 }

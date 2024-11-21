@@ -1,17 +1,17 @@
 import "./AboutPage.css";
-import daniPic from "../assets/dani.jpeg"
-import diegoPic from "../assets/diego.jpg"
-import karaPic from "../assets/kara.png"
-import fullLogo from "../assets/full-logo.png"
-import linkedinIcon from "../assets/linkedin-icon-100px.png"
-import gitHubIcon from "../assets/github-icon-100px.png"
+import daniPic from "../assets/dani.jpeg";
+import diegoPic from "../assets/diego.jpg";
+import karaPic from "../assets/kara.png";
+import fullLogo from "../assets/full-logo.png";
+import linkedinIcon from "../assets/linkedin-icon-100px.png";
+import gitHubIcon from "../assets/github-icon-100px.png";
 
 function AboutPage() {
   return (
     <div className="about-container">
       <h1>About Us</h1>
       <p>Welcome to our movie library, WatchVault from DKD Studios.</p>
-      <img src={fullLogo} alt="WatchVault Logo" width="30%"/>
+      <img src={fullLogo} alt="WatchVault Logo" width="30%" />
       <p>
         The app is designed to be user-friendly, with an intuitive interface
         that makes it easy to navigate and interact with movies. Built with core
@@ -21,11 +21,7 @@ function AboutPage() {
       </p>
       <div className="team-section">
         <div className="team-card">
-          <img
-            className="member-img"
-            src={karaPic}
-            alt="Kara"
-          />
+          <img className="member-img" src={karaPic} alt="Kara" />
           <h2>Kara Jelley</h2>
           <p>
             Hi, I'm Kara, a UX/UI designer with a strong interest in full-stack
@@ -51,10 +47,7 @@ function AboutPage() {
                   "https://www.linkedin.com/in/karajelley/")
               }
             >
-              <img
-                src={linkedinIcon}
-                alt="Linkedin Logo"
-              />
+              <img src={linkedinIcon} alt="Linkedin Logo" />
             </button>
           </div>
         </div>
@@ -83,10 +76,7 @@ function AboutPage() {
                   "https://www.linkedin.com/in/daniela-di-donato-vassallo-3810002a5/")
               }
             >
-              <img
-                src={linkedinIcon}
-                alt="Linkedin Logo"
-              />
+              <img src={linkedinIcon} alt="Linkedin Logo" />
             </button>
           </div>
         </div>
@@ -117,10 +107,7 @@ function AboutPage() {
                   "https://www.linkedin.com/in/dfcisnerosg/")
               }
             >
-              <img
-                src={linkedinIcon}
-                alt="Linkedin Logo"
-              />
+              <img src={linkedinIcon} alt="Linkedin Logo" />
             </button>
           </div>
         </div>

@@ -1,114 +1,112 @@
 .all-movies-section {
-    box-sizing: border-box; 
-    padding: 0 1rem; 
-    
-    .btns-div {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0 1rem;
+
+  .btns-div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .scroll-container {
+    position: relative;
+
+    .movie-cards-container {
+      padding: 2rem;
+      display: flex;
+      height: 100%;
+      gap: 2rem;
+      overflow: auto;
+      white-space: nowrap;
+      scrollbar-color: var(--background-color) rgb(244, 227, 255, 0.05);
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
     }
-    .scroll-container {
-        position: relative;
 
-        .movie-cards-container {
-            padding: 2rem;
-            display: flex;
-            height: 100%;
-            gap: 2rem;
-            overflow: auto;
-            white-space: nowrap;
-            scrollbar-color: var(--background-color) rgb(244, 227, 255, 0.05);
-            scrollbar-width: thin;
-            scroll-behavior: smooth;
-            
-        }
-
-        .scroll-btn {
-            background-color: var(--background-color);
-            border: none;
-            cursor: pointer;
-            position: absolute;
-            z-index: 2;
-            height: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .scroll-btn:hover {
-            background-color: rgb(244, 227, 255, 0.05);
-            img {
-                scale: 130%;
-            }
-        }
-
-        .left {
-            left: 0;
-            border-top-right-radius: 1.3rem;
-            border-bottom-right-radius: 1.3rem;
-        }
-
-        .right {
-            right: 0;
-            border-top-left-radius: 1.3rem;
-            border-bottom-left-radius: 1.3rem;
-        }
-        .search-error-img {
-            width: 100%;
-        }
+    .scroll-btn {
+      background-color: var(--background-color);
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+      height: 50%;
+      top: 50%;
+      transform: translateY(-50%);
     }
+
+    .scroll-btn:hover {
+      background-color: rgb(244, 227, 255, 0.05);
+      img {
+        scale: 130%;
+      }
+    }
+
+    .left {
+      left: 0;
+      border-top-right-radius: 1.3rem;
+      border-bottom-right-radius: 1.3rem;
+    }
+
+    .right {
+      right: 0;
+      border-top-left-radius: 1.3rem;
+      border-bottom-left-radius: 1.3rem;
+    }
+    .search-error-img {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .all-movies-section {
-        padding: 0 1rem; 
-        overflow-x: hidden;
-    }
-    .btns-div {
+  .all-movies-section {
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+  .btns-div {
     flex-direction: column;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-    .movie-cards-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        white-space: normal; 
-    }
-    .scroll-btn {
-        display: none;
-    }
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .movie-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    white-space: normal;
+  }
+  .scroll-btn {
+    display: none;
+  }
 }
-
 
 @media screen and (max-width: 430px) {
-    .all-movies-section {
-        padding: 0 0.5rem; 
-        overflow-x: hidden;
-    }
-    .btns-div {
-        flex-direction: column;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-    .movie-cards-container {
-        padding: 1rem;
-        gap: 0.5rem;
-    }
-    .scroll-btn {
-        display: none;
-    }
-    .search-error-img {
-        width: 80%;
-    }
+  .all-movies-section {
+    padding: 0 0.5rem;
+    overflow-x: hidden;
+  }
+  .btns-div {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .movie-cards-container {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .scroll-btn {
+    display: none;
+  }
+  .search-error-img {
+    width: 80%;
+  }
 }
-fieldset{
-    input {
-        margin: 0 0.5rem;
-    }
+fieldset {
+  input {
+    margin: 0 0.5rem;
+  }
 }

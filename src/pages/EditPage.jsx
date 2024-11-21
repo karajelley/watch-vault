@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
-import "./FormStyling.css"
+import "./FormStyling.css";
 
 const initialFormData = {
   title: "",
@@ -24,13 +24,13 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
 
   const handleOnChange = (e) => {
     const { type, value, name, checked } = e.target;
-  
-    if (type === "checkbox") {
+
+    if (name === "watched" && type === "checkbox") {
       setFormData((prevFormData) => ({
         ...prevFormData,
-        [name]: checked, // Use the `checked` value for checkboxes
+        watched: checked,
       }));
-    } else if (type === "checkbox" && name === "watched") {
+    } else if (name === "genre" && type === "checkbox") {
       setFormData((prevFormData) => ({
         ...prevFormData,
         genre: checked
@@ -40,17 +40,16 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
     } else {
       setFormData((prevFormData) => ({
         ...prevFormData,
-        [name]: value,
+        [name]: type === "checkbox" ? checked : value,
       }));
     }
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { data, error } = await supabase
       .from("moviesdb")
-      .update({watched: formData.watched})
+      .update(formData)
       .eq("_id", id)
       .select();
 
@@ -58,7 +57,7 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
       console.error("Error updating movie:", error);
     } else if (data && data.length > 0) {
       notify("Movie updated successfully!", { type: "success" });
-      await getMovies ()
+      await getMovies();
       navigate(`/movie/${id}`);
     } else {
       console.error("No data returned from update operation.");
@@ -177,7 +176,6 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
               value={formData.image || ""}
               onChange={handleOnChange}
             />
-
           </form>
         </div>
         <div className="edit-right-side-content">

@@ -1,5 +1,5 @@
 import "./ErrorPage.css";
-import errorPic from "../assets/error.png"
+import errorPic from "../assets/error.png";
 
 function ErrorPage() {
   return (
