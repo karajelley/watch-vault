@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import gitHubIcon from "../assets/github-icon-100px.png"
+import logoText from "../assets/logo-text-only.png"
 import "./Footer.css"
 
 function Footer(){
@@ -6,7 +8,7 @@ function Footer(){
         <footer className="footer">
             <div className="footer-container">
                 <div className="copyright-div">
-                    <img src="src/assets/logo-text-only.png" alt="WatchValut Logo" width="15%" />
+                    <img src={logoText} alt="WatchValut Logo" width="15%" />
                     <p>Copyright © 2024 DKD Studios </p>
                 </div>
                 <div className="info-div">
@@ -26,7 +28,7 @@ function Footer(){
                 </div>
                 <div className="github-div">
                     <Link className="member-links github-div" to="https://github.com/didonatodani/dkd-project">
-                        <img src="src/assets/github-icon-100px.png" alt="github Logo" width="5%" />
+                        <img src={gitHubIcon} alt="github Logo" width="5%" />
                         <p>Project Github</p>
                     </Link>
                 </div>

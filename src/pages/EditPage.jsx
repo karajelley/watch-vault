@@ -17,7 +17,7 @@ const initialFormData = {
 
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function EditPage({ moviesArray, setMoviesArray, changesDiscarded, getMovies }) {
+function EditPage({ moviesArray, changesDiscarded, getMovies }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData);

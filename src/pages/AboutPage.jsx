@@ -1,11 +1,17 @@
 import "./AboutPage.css";
+import daniPic from "../assets/dani.jpeg"
+import diegoPic from "../assets/diego.jpg"
+import karaPic from "../assets/kara.png"
+import fullLogo from "../assets/full-logo.png"
+import linkedinIcon from "../assets/linkedin-icon-100px.png"
+import gitHubIcon from "../assets/github-icon-100px.png"
 
 function AboutPage() {
   return (
     <div className="about-container">
       <h1>About Us</h1>
       <p>Welcome to our movie library, WatchVault from DKD Studios.</p>
-      <img src="src/assets/full-logo.png" alt="WatchVault Logo" width="30%"/>
+      <img src={fullLogo} alt="WatchVault Logo" width="30%"/>
       <p>
         The app is designed to be user-friendly, with an intuitive interface
         that makes it easy to navigate and interact with movies. Built with core
@@ -17,7 +23,7 @@ function AboutPage() {
         <div className="team-card">
           <img
             className="member-img"
-            src="src/assets/Headshot Round.png"
+            src={karaPic}
             alt="Kara"
           />
           <h2>Kara Jelley</h2>
@@ -36,7 +42,7 @@ function AboutPage() {
                 (window.location.href = "https://github.com/karajelley")
               }
             >
-              <img src="src/assets/github-icon-100px.png" alt="Github Logo" />
+              <img src={gitHubIcon} alt="Github Logo" />
             </button>
             <button
               className="about-buttons"
@@ -46,14 +52,14 @@ function AboutPage() {
               }
             >
               <img
-                src="src/assets/linkedin-icon-100px.png"
+                src={linkedinIcon}
                 alt="Linkedin Logo"
               />
             </button>
           </div>
         </div>
         <div className="team-card">
-          <img className="member-img" src="src/assets/dani.jpeg" alt="dani" />
+          <img className="member-img" src={daniPic} alt="dani" />
           <h2>Dani di Donato</h2>
           <p>
             With a background in teaching English as a second language, I have
@@ -68,7 +74,7 @@ function AboutPage() {
                 (window.location.href = "https://github.com/didonatodani")
               }
             >
-              <img src="src/assets/github-icon-100px.png" alt="Github Logo" />
+              <img src={gitHubIcon} alt="Github Logo" />
             </button>
             <button
               className="about-buttons"
@@ -78,14 +84,14 @@ function AboutPage() {
               }
             >
               <img
-                src="src/assets/linkedin-icon-100px.png"
+                src={linkedinIcon}
                 alt="Linkedin Logo"
               />
             </button>
           </div>
         </div>
         <div className="team-card">
-          <img className="member-img" src="src/assets/diego.jpg" alt="Diego" />
+          <img className="member-img" src={diegoPic} alt="Diego" />
           <h2>Diego Cisneros</h2>
           <p>
             As an aspiring web developer, I'm diving into this course to expand
@@ -102,7 +108,7 @@ function AboutPage() {
                 (window.location.href = "https://github.com/Kasper1-2")
               }
             >
-              <img src="src/assets/github-icon-100px.png" alt="Github Logo" />
+              <img src={gitHubIcon} alt="Github Logo" />
             </button>
             <button
               className="about-buttons"
@@ -112,7 +118,7 @@ function AboutPage() {
               }
             >
               <img
-                src="src/assets/linkedin-icon-100px.png"
+                src={linkedinIcon}
                 alt="Linkedin Logo"
               />
             </button>

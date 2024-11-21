@@ -59,7 +59,7 @@ function NewMoviePage({changesDiscarded, getMovies}) {
 
       await getMovies();
       
-      navigate(`/allmovies`);
+      navigate("/");
   }
 
   return (
