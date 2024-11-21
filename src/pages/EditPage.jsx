@@ -24,8 +24,13 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
 
   const handleOnChange = (e) => {
     const { type, value, name, checked } = e.target;
-
-    if (type === "checkbox" && name === "genre") {
+  
+    if (type === "checkbox") {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: checked, // Use the `checked` value for checkboxes
+      }));
+    } else if (type === "checkbox" && name === "genre") {
       setFormData((prevFormData) => ({
         ...prevFormData,
         genre: checked
@@ -39,6 +44,7 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
       }));
     }
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
