@@ -30,7 +30,7 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
         ...prevFormData,
         [name]: checked, // Use the `checked` value for checkboxes
       }));
-    } else if (type === "checkbox" && name === "genre") {
+    } else if (type === "checkbox" && name === "watched") {
       setFormData((prevFormData) => ({
         ...prevFormData,
         genre: checked
@@ -50,7 +50,7 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
     e.preventDefault();
     const { data, error } = await supabase
       .from("moviesdb")
-      .update(formData)
+      .update({watched: formData.watched})
       .eq("_id", id)
       .select();
 
@@ -107,7 +107,7 @@ function EditPage({ moviesArray, changesDiscarded, getMovies }) {
               <input
                 type="checkbox"
                 name="watched"
-                value={formData.watched || ""}
+                checked={formData.watched}
                 onChange={handleOnChange}
               />
             </label>
