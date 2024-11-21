@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { notify } from "../utils/toastUtils";
 import supabase from "../supabase/config";
-import "./FormStyling.css"
+import "./FormStyling.css";
 
 const initialFormData = {
   title: "",
@@ -15,13 +15,11 @@ const initialFormData = {
   description: "",
 };
 
-// THIS MIGHT GO TO USECONTEXT()!!!!
 const genresArray = ["Action", "Comedy", "Drama", "Romance", "Thriller"];
 
-function NewMoviePage({changesDiscarded, getMovies}) {
+function NewMoviePage({ changesDiscarded, getMovies }) {
   const [formData, setFormData] = useState(initialFormData);
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
 
   function handleOnChange(e) {
     const { type, value, id, checked, name } = e.target;
@@ -42,7 +40,6 @@ function NewMoviePage({changesDiscarded, getMovies}) {
     }
   }
 
-
   async function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
@@ -55,11 +52,11 @@ function NewMoviePage({changesDiscarded, getMovies}) {
       .catch((error) => {
         console.log(error);
       });
-      notify("Movie created successfully!", { type: "success" });
+    notify("Movie created successfully!", { type: "success" });
 
-      await getMovies();
-      
-      navigate("/");
+    await getMovies();
+
+    navigate("/");
   }
 
   return (
@@ -156,16 +153,16 @@ function NewMoviePage({changesDiscarded, getMovies}) {
                 );
               })}
             </div>
-   
-              <label htmlFor="description">Description:</label>
-              <textarea
-                type="text"
-                id="description"
-                value={formData.description}
-                onChange={handleOnChange}
-                rows="8"
-                cols="50" 
-              />
+
+            <label htmlFor="description">Description:</label>
+            <textarea
+              type="text"
+              id="description"
+              value={formData.description}
+              onChange={handleOnChange}
+              rows="8"
+              cols="50"
+            />
 
             <label htmlFor="image">Image:</label>
             <input
