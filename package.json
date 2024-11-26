@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "cypress open"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.46.1",
@@ -22,11 +23,17 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
+    "cypress": "^13.16.0",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
     "vite": "^5.4.10"
-  }
+  },
+  "description": "A React-based Single Page Application (SPA) for creating and managing personalized movie lists. Users can perform all CRUD (Create, Read, Update, Delete) operations, sort movies, and track their favorite movies across platforms.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
