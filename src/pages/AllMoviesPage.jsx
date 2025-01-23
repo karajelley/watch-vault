@@ -9,7 +9,7 @@ import errorSearchImg from "../assets/search-error.png";
 
 function AllMoviesPage({ moviesArray, getMovies }) {
   const navigate = useNavigate();
-  const [filteredMovies, setFilteredMovies] = useState(moviesArray);
+  const [filteredMovies, setFilteredMovies] = useState(moviesArray || []);
   const [watched, setWatched] = useState(null);
 
   const handleSearchInput = (searchText) => {
@@ -46,7 +46,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
   };
 
   useEffect(() => {
-    if (moviesArray.length === 0) {
+    if (!moviesArray || moviesArray.length === 0) {
       getMovies();
     }
   }, [getMovies, moviesArray]);
@@ -106,7 +106,7 @@ function AllMoviesPage({ moviesArray, getMovies }) {
         </fieldset>
       </div>
       <section className="scroll-container">
-        {filteredMovies.length === 0 ? (
+        {(filteredMovies?.length ?? 0 ) === 0 ? (
           <img
             src={errorSearchImg}
             alt="error search image"
@@ -141,32 +141,6 @@ function AllMoviesPage({ moviesArray, getMovies }) {
             </button>
           </>
         )}
-
-        {/* <button className="scroll-btn left" onClick={slideLeft}>
-          <img src={leftButton} alt="left scroll button" />
-        </button>
-        <div className="movie-cards-container">
-          {watched === null // by default will we this, since "all" is watched === null
-            ? filteredMovies.map((movie) => (
-                <Link key={movie._id} to={`/movie/${movie._id}`}>
-                  <MovieCard movie={movie} />
-                </Link>
-              ))
-            : filteredMovies //if watched is not null:
-                .filter((movie) => movie.watched === watched) //we first filter movies by watched true or false
-                .map(
-                  (
-                    movie //then, render the filtered list
-                  ) => (
-                    <Link key={movie._id} to={`/movie/${movie._id}`}>
-                      <MovieCard movie={movie} />
-                    </Link>
-                  )
-                )}
-        </div>
-        <button className="scroll-btn right" onClick={slideRight}>
-          <img src={rightButton} alt="right scroll button" />
-        </button> */}
       </section>
     </section>
   );

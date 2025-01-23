@@ -19,7 +19,7 @@ function App() {
   async function getMovies() {
     try {
       let response = await supabase
-        .from("moviesdb") //name of the table in superbase
+        .from("moviesd") //name of the table in superbase
         .select("*"); //we want to import all table entries
       setMoviesArray(response.data);
     } catch {
