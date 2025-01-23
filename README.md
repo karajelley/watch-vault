@@ -1,4 +1,4 @@
-# Movie List App
+# Watch Vault App
 A React-based Single Page Application (SPA) for creating and managing personalized movie lists. Users can perform all CRUD (Create, Read, Update, Delete) operations, sort movies, and track their favorite movies across platforms.
 
 ## About the Project
